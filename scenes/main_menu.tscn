@@ -1,0 +1,186 @@
+[gd_scene load_steps=8 format=3 uid="uid://bco646mt14kq4"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_83klr"]
+[ext_resource type="AudioStream" uid="uid://dgo41klkfoc2n" path="res://assets/trapezoid.wav" id="2_ow8fv"]
+[ext_resource type="Theme" uid="uid://cmnphk4dtgj2x" path="res://resources/font_theme.tres" id="3_ddjng"]
+[ext_resource type="StyleBox" uid="uid://cfnkbyl44sapq" path="res://resources/button_outline.tres" id="4_k4ioo"]
+[ext_resource type="Texture2D" uid="uid://ctqopryol3ch8" path="res://resources/grabber.tres" id="5_glh0o"]
+
+[sub_resource type="Gradient" id="Gradient_lypy5"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cex7m"]
+gradient = SubResource("Gradient_lypy5")
+width = 8
+height = 8
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_83klr")
+theme = ExtResource("2_ow8fv")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 180.0
+focus_neighbor_left = NodePath("VBoxContainer/ButtonsContainer/PlayButton")
+focus_neighbor_top = NodePath("VBoxContainer/ButtonsContainer/PlayButton")
+focus_neighbor_right = NodePath("VBoxContainer/ButtonsContainer/PlayButton")
+focus_neighbor_bottom = NodePath("VBoxContainer/ButtonsContainer/PlayButton")
+focus_next = NodePath("VBoxContainer/ButtonsContainer/PlayButton")
+focus_previous = NodePath("VBoxContainer/ButtonsContainer/PlayButton")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.5
+offset_top = -20.5
+offset_right = 48.5
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_ddjng")
+theme_override_font_sizes/font_size = 12
+text = "Accelerant"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="ExitButton" type="Button" parent="CanvasLayer/Control/VBoxContainer/ButtonsContainer"]
+layout_mode = 2
+focus_neighbor_right = NodePath("../PlayButton")
+focus_neighbor_bottom = NodePath("../../../VolumeContainer/VolumeSlider")
+focus_next = NodePath("../PlayButton")
+theme = ExtResource("3_ddjng")
+theme_override_styles/focus = ExtResource("4_k4ioo")
+text = "Exit"
+
+[node name="PlayButton" type="Button" parent="CanvasLayer/Control/VBoxContainer/ButtonsContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../ExitButton")
+focus_neighbor_bottom = NodePath("../../../VolumeContainer/VolumeSlider")
+focus_previous = NodePath("../ExitButton")
+theme = ExtResource("3_ddjng")
+theme_override_styles/focus = ExtResource("4_k4ioo")
+text = "Play"
+
+[node name="VolumeContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -26.5
+offset_top = -41.0
+offset_right = 26.5
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="VolumeLabel" type="Label" parent="CanvasLayer/Control/VolumeContainer"]
+layout_mode = 2
+theme = ExtResource("3_ddjng")
+text = "Volume:  25"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VolumeSlider" type="HSlider" parent="CanvasLayer/Control/VolumeContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../../VBoxContainer/ButtonsContainer/PlayButton")
+theme_override_icons/grabber = ExtResource("5_glh0o")
+theme_override_icons/grabber_highlight = SubResource("GradientTexture2D_cex7m")
+theme_override_styles/slider = ExtResource("4_k4ioo")
+theme_override_styles/grabber_area = ExtResource("4_k4ioo")
+theme_override_styles/grabber_area_highlight = ExtResource("4_k4ioo")
+max_value = 1.0
+step = 0.05
+value = 0.25
+scrollable = false
+
+[node name="DeleteSaveDataButton" type="Button" parent="CanvasLayer/Control/VolumeContainer"]
+layout_mode = 2
+theme = ExtResource("3_ddjng")
+theme_override_font_sizes/font_size = 3
+theme_override_styles/focus = ExtResource("4_k4ioo")
+text = "Delete Save Data"
+
+[node name="SpacerLabel" type="Label" parent="CanvasLayer/Control/VolumeContainer"]
+layout_mode = 2
+theme = ExtResource("3_ddjng")
+theme_override_font_sizes/font_size = 1
+
+[node name="ControllerContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 78.0
+
+[node name="Title" type="Label" parent="CanvasLayer/Control/ControllerContainer"]
+layout_mode = 2
+theme = ExtResource("3_ddjng")
+text = "Controller"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InfoLabel" type="Label" parent="CanvasLayer/Control/ControllerContainer"]
+layout_mode = 2
+theme = ExtResource("3_ddjng")
+theme_override_font_sizes/font_size = 4
+text = "Move:      Joystick/D-Pad
+Interact:               Y
+Jump:                   A
+Pause Menu:         START
+Reset Room:          BACK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KeyboardContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 192.0
+offset_right = 320.0
+offset_bottom = 68.0
+
+[node name="Title" type="Label" parent="CanvasLayer/Control/KeyboardContainer"]
+layout_mode = 2
+theme = ExtResource("3_ddjng")
+text = "Keyboard"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InfoLabel" type="Label" parent="CanvasLayer/Control/KeyboardContainer"]
+layout_mode = 2
+theme = ExtResource("3_ddjng")
+theme_override_font_sizes/font_size = 4
+text = "Move:                WASD
+Interact:               F
+Jump:               SPACE
+Pause Menu:         Q/ESC
+Reset Room:             R"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ShowControlLabel" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 265.0
+offset_top = 170.0
+offset_right = 316.0
+offset_bottom = 180.0
+theme = ExtResource("3_ddjng")
+theme_override_font_sizes/font_size = 3
+text = "Press 'Q' to show controls"
+horizontal_alignment = 1
+vertical_alignment = 1

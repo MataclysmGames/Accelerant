@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://ch3crm1p4dd5b"]
+
+[ext_resource type="Texture2D" uid="uid://pdsxg84sbui0" path="res://assets/molly-idle.png" id="1_83tx0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dvy6n"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_os6ip"]
+atlas = ExtResource("1_83tx0")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rs8yf"]
+atlas = ExtResource("1_83tx0")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i0mfu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_os6ip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rs8yf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="NPC_Molly" type="StaticBody2D"]
+position = Vector2(8, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dvy6n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_i0mfu")
+autoplay = "default"
+frame_progress = 0.20276

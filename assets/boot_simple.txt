@@ -1,0 +1,32 @@
+[  OK  ] Started Show Plymouth Boot Screen.
+[  OK  ] Reached target Paths.
+[  OK  ] Reached target Basic System.
+[  OK  ] Found device ST9500325AS.
+[  OK  ] Started dracut initqueue hook.
+		 Starting dracut pre-mount hook...
+[  OK  ] Reached target Remote File Systems (Pre).
+[  OK  ] Reached target Remote File Systems.
+[  OK  ] Started dracut pre-mount hook.
+		 Starting File System Check on /dev/disk/by-uuid/85e4ae33-c60e-4372-a6ba-9aeb23bf6d86...
+[  OK  ] Started File System Check on /dev/disk/by-uuid/85e4ae33-c60e-4372-a6ba-9aeb23bf6d86.
+		 Mounting /sysroot...
+[  OK  ] Mounted /sysroot.
+[  OK  ] Reached target Initrd Root File System.
+		 Starting Reload Configuration from the Real Root...
+[  OK  ] Started Reload Configuration from the Real Root.
+[  OK  ] Reached target Initrd File Systems.
+[  OK  ] Reached target Initrd Default Target.
+
+Welcome to openSUSE 13.2 (Harlequin) (x86_64)!
+
+[  OK  ] Stopped Switch Root.
+[  OK  ] Stopped target Switch Root.
+[  OK  ] Stopped target Initrd File Systems.
+		 Stopping File System Check on /dev/disk/by-uuid/85e4ae33-c60e-4372-a6ba-9aeb23bf6d86...
+[  OK  ] Stopped File System Check on /dev/disk/by-uuid/85e4ae33-c60e-4372-a6ba-9aeb23bf6d86.
+[  OK  ] Stopped target Initrd Root File System.
+		 Starting Collect Read-Ahead Data...
+[  OK  ] Created slice User and Session Slice.
+[  OK  ] Created slice system-getty.slice.
+		 Setting up Database connection...
+[  OK  ] Connected.

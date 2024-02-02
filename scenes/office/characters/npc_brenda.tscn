@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://n8epktbmk87h"]
+
+[ext_resource type="Texture2D" uid="uid://548tcdvu4o34" path="res://assets/brenda-idle.png" id="1_fr3mv"]
+[ext_resource type="PackedScene" uid="uid://bgiuwib4vkehr" path="res://scenes/global/interaction_zone.tscn" id="2_dr18c"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t7qdx"]
+radius = 7.0
+height = 14.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cf2ls"]
+atlas = ExtResource("1_fr3mv")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3o61c"]
+atlas = ExtResource("1_fr3mv")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sdxah"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cf2ls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3o61c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="NPC_Brenda" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_t7qdx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_sdxah")
+autoplay = "default"
+frame_progress = 0.160691
+
+[node name="InteractionZone" parent="." instance=ExtResource("2_dr18c")]
+position = Vector2(-12, -13)
+scale = Vector2(1.5, 2)
+interaction_name = &"npc_brenda"

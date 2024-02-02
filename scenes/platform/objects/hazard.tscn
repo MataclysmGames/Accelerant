@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://icaaieifs2ir"]
+
+[ext_resource type="Script" path="res://scripts/hazard.gd" id="1_yvq4x"]
+[ext_resource type="Texture2D" uid="uid://cubsmbot2ha4u" path="res://assets/hazard.png" id="2_xs4vs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8nvv2"]
+size = Vector2(14, 8)
+
+[node name="Hazard" type="Node2D"]
+script = ExtResource("1_yvq4x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(8, 8)
+texture = ExtResource("2_xs4vs")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(8, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_8nvv2")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

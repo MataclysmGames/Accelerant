@@ -1,0 +1,88 @@
+[gd_scene load_steps=9 format=3 uid="uid://d1jyjcgffvblv"]
+
+[ext_resource type="Script" path="res://scripts/office_computer.gd" id="1_yocso"]
+[ext_resource type="Theme" uid="uid://cmnphk4dtgj2x" path="res://resources/font_theme.tres" id="3_glid8"]
+
+[sub_resource type="Gradient" id="Gradient_vbtt3"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wdm01"]
+gradient = SubResource("Gradient_vbtt3")
+width = 320
+height = 180
+
+[sub_resource type="Gradient" id="Gradient_bcoes"]
+colors = PackedColorArray(0.099986, 0.099986, 0.099986, 1, 0.099986, 0.099986, 0.099986, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rwpv5"]
+gradient = SubResource("Gradient_bcoes")
+width = 120
+height = 6
+
+[sub_resource type="Gradient" id="Gradient_vdctj"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3oujw"]
+gradient = SubResource("Gradient_vdctj")
+width = 20
+height = 4
+
+[node name="OfficeComputer" type="Node2D"]
+script = ExtResource("1_yocso")
+
+[node name="BootCanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="BootCanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 180.0
+
+[node name="Background" type="Sprite2D" parent="BootCanvasLayer/Control"]
+texture = SubResource("GradientTexture2D_wdm01")
+centered = false
+
+[node name="Terminal" type="Node2D" parent="BootCanvasLayer/Control"]
+position = Vector2(90, 41)
+
+[node name="Header" type="Sprite2D" parent="BootCanvasLayer/Control/Terminal"]
+texture = SubResource("GradientTexture2D_rwpv5")
+centered = false
+
+[node name="TabBackground" type="Sprite2D" parent="BootCanvasLayer/Control/Terminal/Header"]
+position = Vector2(17.875, 3.5)
+scale = Vector2(1.6125, 1.25)
+texture = SubResource("GradientTexture2D_3oujw")
+
+[node name="Label" type="Label" parent="BootCanvasLayer/Control/Terminal/Header"]
+offset_left = 5.0
+offset_top = 2.0
+offset_right = 39.0
+offset_bottom = 9.0
+theme = ExtResource("3_glid8")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 2
+text = "Terminal (x16)"
+
+[node name="Text" type="TextEdit" parent="BootCanvasLayer/Control/Terminal"]
+offset_top = 6.0
+offset_right = 120.0
+offset_bottom = 86.0
+focus_mode = 0
+theme = ExtResource("3_glid8")
+theme_override_colors/background_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 0
+theme_override_constants/caret_width = 0
+theme_override_font_sizes/font_size = 2
+text = "The quick brown fox "
+editable = false
+context_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+scroll_smooth = true
+scroll_v_scroll_speed = 1.0

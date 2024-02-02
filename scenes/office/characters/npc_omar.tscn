@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://cfd4fhuh1fs0f"]
+
+[ext_resource type="Texture2D" uid="uid://ds82dyhj4wu4l" path="res://assets/omar-idle.png" id="1_p0uyn"]
+[ext_resource type="PackedScene" uid="uid://bgiuwib4vkehr" path="res://scenes/global/interaction_zone.tscn" id="2_vftfg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lnykc"]
+radius = 5.0
+height = 14.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khwp2"]
+atlas = ExtResource("1_p0uyn")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2bhg"]
+atlas = ExtResource("1_p0uyn")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_73a8w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khwp2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2bhg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="NPC_Omar" type="StaticBody2D"]
+position = Vector2(8, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1)
+shape = SubResource("CapsuleShape2D_lnykc")
+
+[node name="InteractionZone" parent="." instance=ExtResource("2_vftfg")]
+position = Vector2(-19, -11)
+scale = Vector2(2, 2)
+interaction_name = &"npc_omar"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_73a8w")
+autoplay = "default"

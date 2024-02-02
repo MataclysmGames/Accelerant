@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4n35b3ox7vgx"]
+
+[ext_resource type="Theme" uid="uid://cmnphk4dtgj2x" path="res://resources/font_theme.tres" id="1_twr28"]
+[ext_resource type="Script" path="res://scripts/label_generator.gd" id="2_pfto2"]
+
+[node name="LabelGenerator" type="Label"]
+texture_filter = 1
+offset_right = 16.0
+offset_bottom = 16.0
+theme = ExtResource("1_twr28")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_pfto2")

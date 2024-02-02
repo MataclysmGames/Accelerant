@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://0rg0wy64v8m"]
+
+[ext_resource type="Texture2D" uid="uid://0mwmtyq0xx5r" path="res://assets/interaction-icon.png" id="1_bigr3"]
+[ext_resource type="Script" path="res://scripts/interaction_icon.gd" id="2_i0pc5"]
+
+[node name="InteractionIcon" type="Sprite2D"]
+z_index = 5
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_bigr3")
+script = ExtResource("2_i0pc5")

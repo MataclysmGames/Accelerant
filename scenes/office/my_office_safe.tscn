@@ -1,0 +1,180 @@
+[gd_scene load_steps=4 format=3 uid="uid://dh88cnnxdbyd1"]
+
+[ext_resource type="Script" path="res://scripts/my_office_safe.gd" id="1_bjhas"]
+[ext_resource type="Theme" uid="uid://cmnphk4dtgj2x" path="res://resources/font_theme.tres" id="1_ii7xh"]
+[ext_resource type="StyleBox" uid="uid://cfnkbyl44sapq" path="res://resources/button_outline.tres" id="3_ywlhi"]
+
+[node name="MyOfficeSafe" type="CanvasLayer"]
+script = ExtResource("1_bjhas")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+custom_minimum_size = Vector2(320, 180)
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 180.0
+color = Color(0, 0, 0, 0.784314)
+
+[node name="GridContainer" type="GridContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="Button1" type="Button" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+theme = ExtResource("1_ii7xh")
+theme_override_font_sizes/font_size = 6
+theme_override_styles/focus = ExtResource("3_ywlhi")
+text = "1"
+
+[node name="Button2" type="Button" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+theme = ExtResource("1_ii7xh")
+theme_override_font_sizes/font_size = 6
+theme_override_styles/focus = ExtResource("3_ywlhi")
+text = "2"
+
+[node name="Button3" type="Button" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+theme = ExtResource("1_ii7xh")
+theme_override_font_sizes/font_size = 6
+theme_override_styles/focus = ExtResource("3_ywlhi")
+text = "3"
+
+[node name="Button4" type="Button" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+theme = ExtResource("1_ii7xh")
+theme_override_font_sizes/font_size = 6
+theme_override_styles/focus = ExtResource("3_ywlhi")
+text = "4"
+
+[node name="Button5" type="Button" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+theme = ExtResource("1_ii7xh")
+theme_override_font_sizes/font_size = 6
+theme_override_styles/focus = ExtResource("3_ywlhi")
+text = "5"
+
+[node name="Button6" type="Button" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+theme = ExtResource("1_ii7xh")
+theme_override_font_sizes/font_size = 6
+theme_override_styles/focus = ExtResource("3_ywlhi")
+text = "6"
+
+[node name="Button7" type="Button" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+theme = ExtResource("1_ii7xh")
+theme_override_font_sizes/font_size = 6
+theme_override_styles/focus = ExtResource("3_ywlhi")
+text = "7"
+
+[node name="Button8" type="Button" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+theme = ExtResource("1_ii7xh")
+theme_override_font_sizes/font_size = 6
+theme_override_styles/focus = ExtResource("3_ywlhi")
+text = "8"
+
+[node name="Button9" type="Button" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+theme = ExtResource("1_ii7xh")
+theme_override_font_sizes/font_size = 6
+theme_override_styles/focus = ExtResource("3_ywlhi")
+text = "9"
+
+[node name="Button10" type="Button" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+theme = ExtResource("1_ii7xh")
+theme_override_font_sizes/font_size = 6
+theme_override_styles/focus = ExtResource("3_ywlhi")
+text = "BACK"
+
+[node name="Button11" type="Button" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+theme = ExtResource("1_ii7xh")
+theme_override_font_sizes/font_size = 6
+theme_override_styles/focus = ExtResource("3_ywlhi")
+text = "0"
+
+[node name="Button12" type="Button" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+theme = ExtResource("1_ii7xh")
+theme_override_font_sizes/font_size = 6
+theme_override_styles/focus = ExtResource("3_ywlhi")
+text = "EXIT"
+
+[node name="EnteredValuesContainer" type="GridContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -20.0
+offset_right = 32.0
+grow_horizontal = 2
+grow_vertical = 0
+columns = 4
+
+[node name="Value1" type="Button" parent="Control/EnteredValuesContainer"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("1_ii7xh")
+theme_override_font_sizes/font_size = 4
+disabled = true
+
+[node name="Value2" type="Button" parent="Control/EnteredValuesContainer"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("1_ii7xh")
+theme_override_font_sizes/font_size = 4
+disabled = true
+
+[node name="Value3" type="Button" parent="Control/EnteredValuesContainer"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("1_ii7xh")
+theme_override_font_sizes/font_size = 4
+disabled = true
+
+[node name="Value4" type="Button" parent="Control/EnteredValuesContainer"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("1_ii7xh")
+theme_override_font_sizes/font_size = 4
+disabled = true

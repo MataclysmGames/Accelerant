@@ -1,0 +1,164 @@
+[gd_scene load_steps=9 format=3 uid="uid://dil68rhg1rbv5"]
+
+[ext_resource type="Script" path="res://scripts/static_dialogue.gd" id="1_un6ng"]
+[ext_resource type="Theme" uid="uid://cmnphk4dtgj2x" path="res://resources/font_theme.tres" id="2_mpphn"]
+[ext_resource type="StyleBox" uid="uid://cfnkbyl44sapq" path="res://resources/button_outline.tres" id="3_efeee"]
+[ext_resource type="Texture2D" uid="uid://4j5r8jx03wxl" path="res://assets/dialogue-advance-icon.png" id="3_tk4dv"]
+[ext_resource type="Texture2D" uid="uid://pdsxg84sbui0" path="res://assets/molly-idle.png" id="4_4tevh"]
+
+[sub_resource type="Gradient" id="Gradient_vft8y"]
+colors = PackedColorArray(0.154876, 0.154876, 0.154876, 0.784314, 0.0214347, 0.0214346, 0.0214346, 0.662745)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_j0pe3"]
+noise_type = 0
+seed = 327
+frequency = 0.05
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bn31i"]
+width = 224
+height = 48
+color_ramp = SubResource("Gradient_vft8y")
+noise = SubResource("FastNoiseLite_j0pe3")
+
+[node name="StaticDialogue" type="CanvasLayer"]
+visible = false
+script = ExtResource("1_un6ng")
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(224, 48)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 224.0
+offset_bottom = 48.0
+
+[node name="BaseBackground" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_right = 224.0
+offset_bottom = 48.0
+color = Color(0, 0, 0, 0.776471)
+
+[node name="WhiteBorder" type="ReferenceRect" parent="Control/BaseBackground"]
+layout_mode = 0
+offset_right = 224.0
+offset_bottom = 48.0
+border_color = Color(1, 1, 1, 1)
+border_width = 2.0
+editor_only = false
+
+[node name="BlackBorder" type="ReferenceRect" parent="Control/BaseBackground/WhiteBorder"]
+layout_mode = 0
+offset_right = 224.0
+offset_bottom = 48.0
+border_color = Color(0, 0, 0, 1)
+border_width = 2.0
+editor_only = false
+
+[node name="NoiseBackground" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_right = 224.0
+offset_bottom = 48.0
+texture = SubResource("NoiseTexture2D_bn31i")
+
+[node name="HeaderLabel" type="RichTextLabel" parent="Control"]
+custom_minimum_size = Vector2(204, 12)
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 208.0
+offset_bottom = 16.0
+theme = ExtResource("2_mpphn")
+theme_override_font_sizes/normal_font_size = 6
+theme_override_font_sizes/mono_font_size = 6
+bbcode_enabled = true
+text = "[b]Hello World[/b]"
+fit_content = true
+
+[node name="ContentLabel" type="RichTextLabel" parent="Control"]
+custom_minimum_size = Vector2(204, 28)
+layout_mode = 0
+offset_left = 4.0
+offset_top = 16.0
+offset_right = 208.0
+offset_bottom = 44.0
+theme = ExtResource("2_mpphn")
+theme_override_font_sizes/normal_font_size = 6
+bbcode_enabled = true
+text = "[pulse][rainbow]The quick brown fox jumps over the lazy dog. Test Test Test"
+fit_content = true
+scroll_active = false
+
+[node name="Button1" type="Button" parent="Control"]
+custom_minimum_size = Vector2(32, 16)
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 64.0
+offset_bottom = 30.0
+focus_neighbor_right = NodePath("../Button2")
+focus_next = NodePath("../Button2")
+theme = ExtResource("2_mpphn")
+theme_override_font_sizes/font_size = 6
+theme_override_styles/focus = ExtResource("3_efeee")
+text = "Button1"
+
+[node name="Button2" type="Button" parent="Control"]
+custom_minimum_size = Vector2(32, 16)
+layout_mode = 0
+offset_left = 80.0
+offset_top = 16.0
+offset_right = 128.0
+offset_bottom = 30.0
+focus_neighbor_left = NodePath("../Button1")
+focus_neighbor_right = NodePath("../Button3")
+focus_next = NodePath("../Button3")
+focus_previous = NodePath("../Button1")
+theme = ExtResource("2_mpphn")
+theme_override_font_sizes/font_size = 6
+theme_override_styles/focus = ExtResource("3_efeee")
+text = "Button2"
+
+[node name="Button3" type="Button" parent="Control"]
+custom_minimum_size = Vector2(32, 16)
+layout_mode = 0
+offset_left = 144.0
+offset_top = 16.0
+offset_right = 192.0
+offset_bottom = 30.0
+focus_neighbor_left = NodePath("../Button2")
+focus_previous = NodePath("../Button2")
+theme = ExtResource("2_mpphn")
+theme_override_font_sizes/font_size = 6
+theme_override_styles/focus = ExtResource("3_efeee")
+text = "Button3"
+
+[node name="PortraitBackground" type="ColorRect" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 6.0
+offset_top = -36.0
+offset_right = 24.0
+offset_bottom = -18.0
+scale = Vector2(2, 2)
+color = Color(0, 0, 0, 0.776471)
+
+[node name="BlackBorder" type="ReferenceRect" parent="Control/PortraitBackground"]
+layout_mode = 0
+offset_right = 18.0
+offset_bottom = 18.0
+border_color = Color(0, 0, 0, 1)
+border_width = 2.0
+editor_only = false
+
+[node name="Portrait" type="Sprite2D" parent="Control"]
+visible = false
+position = Vector2(24, -18)
+scale = Vector2(2, 2)
+texture = ExtResource("4_4tevh")
+hframes = 2
+
+[node name="InteractionIcon" type="Sprite2D" parent="Control"]
+visible = false
+position = Vector2(208, 32)
+texture = ExtResource("3_tk4dv")
+centered = false
+hframes = 2

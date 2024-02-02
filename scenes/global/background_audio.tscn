@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://3fxvbeh48qg0"]
+
+[ext_resource type="Script" path="res://scripts/background_audio.gd" id="1_dema8"]
+
+[node name="BackgroundAudio" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_dema8")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3

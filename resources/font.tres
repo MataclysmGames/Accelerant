@@ -1,0 +1,13 @@
+[gd_resource type="SystemFont" load_steps=2 format=3 uid="uid://b36oyh7b4kq7j"]
+
+[ext_resource type="FontFile" uid="uid://c8rrn56ot8yr2" path="res://external_assets/Roboto_Mono/static/RobotoMono-Regular.ttf" id="1_0p38g"]
+
+[resource]
+fallbacks = Array[Font]([ExtResource("1_0p38g")])
+font_names = PackedStringArray("Monospace")
+allow_system_fallback = false
+force_autohinter = true
+hinting = 2
+subpixel_positioning = 3
+multichannel_signed_distance_field = true
+msdf_size = 128

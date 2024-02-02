@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bihw2tjlnxf0d"]
+
+[ext_resource type="Script" path="res://scripts/rising_platform.gd" id="1_dd1x2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l2asi"]
+size = Vector2(48, 16)
+
+[node name="RisingPlatform" type="AnimatableBody2D"]
+script = ExtResource("1_dd1x2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(24, 8)
+shape = SubResource("RectangleShape2D_l2asi")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 48.0
+offset_bottom = 16.0
+color = Color(0, 0, 0, 1)

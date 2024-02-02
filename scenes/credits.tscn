@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0eqoivdpoej3"]
+
+[ext_resource type="Script" path="res://scripts/credits.gd" id="1_1h0hm"]
+[ext_resource type="Theme" uid="uid://cmnphk4dtgj2x" path="res://resources/font_theme.tres" id="2_shvjt"]
+
+[node name="Credits" type="Node2D"]
+script = ExtResource("1_1h0hm")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 180.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -60.0
+offset_right = 60.0
+offset_bottom = 43.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Spacer" type="Label" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_shvjt")
+theme_override_font_sizes/font_size = 24
+text = "Accelerant"
+
+[node name="InfoLabel" type="Label" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_shvjt")
+theme_override_font_sizes/font_size = 8
+text = "By Matthew Erickson"
+horizontal_alignment = 1
+
+[node name="Spacer2" type="Label" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="TimePlayedLabel" type="Label" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_shvjt")
+theme_override_font_sizes/font_size = 8
+horizontal_alignment = 1
+
+[node name="NumDeathsLabel" type="Label" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_shvjt")
+theme_override_font_sizes/font_size = 8
+horizontal_alignment = 1

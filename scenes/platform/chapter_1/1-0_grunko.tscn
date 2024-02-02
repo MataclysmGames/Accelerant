@@ -1,0 +1,76 @@
+[gd_scene load_steps=9 format=3 uid="uid://dmvkegvyidl7d"]
+
+[ext_resource type="Script" path="res://scripts/levels/1-0_grunko.gd" id="1_i020u"]
+[ext_resource type="PackedScene" uid="uid://dy2nsbd7j51u1" path="res://scenes/platform/objects/spreadsheet.tscn" id="1_shh8x"]
+[ext_resource type="AudioStream" uid="uid://co18aksti8mha" path="res://assets/merp.wav" id="2_2vfyo"]
+[ext_resource type="PackedScene" uid="uid://6nn5nea1bkbq" path="res://scenes/platform/objects/platform_tile_map.tscn" id="2_i4ls6"]
+[ext_resource type="PackedScene" uid="uid://vwe4gklch4fh" path="res://scenes/platform/objects/platform_player.tscn" id="3_0twih"]
+[ext_resource type="PackedScene" uid="uid://icaaieifs2ir" path="res://scenes/platform/objects/hazard.tscn" id="4_isurt"]
+[ext_resource type="PackedScene" uid="uid://qbd6l8isa0vb" path="res://scenes/platform/objects/moving_platform.tscn" id="5_3cna5"]
+[ext_resource type="PackedScene" uid="uid://bwakp2pfegwpx" path="res://scenes/global/scene_transition_trigger.tscn" id="6_ho0kj"]
+
+[node name="1-0_Grunko" type="Node2D"]
+script = ExtResource("1_i020u")
+theme = ExtResource("2_2vfyo")
+
+[node name="Spreadsheet" parent="." instance=ExtResource("1_shh8x")]
+
+[node name="PlatformTileMap" parent="." instance=ExtResource("2_i4ls6")]
+layer_0/tile_data = PackedInt32Array(262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0, 524304, 0, 0, 524305, 0, 0, 524306, 0, 0, 524307, 0, 0, 524308, 0, 0, 524309, 0, 0, 524310, 0, 0, 524311, 0, 0, 24, 0, 0, 65560, 0, 0, 131096, 0, 0, 196632, 0, 0, 262168, 0, 0, 327704, 0, 0, 393240, 0, 0, 458776, 0, 0, 524312, 0, 0, 327689, 0, 0, 393225, 0, 0, 458761, 0, 0, 327683, 0, 0, 393219, 0, 0, 458755, 0, 0, 327684, 0, 0, 393220, 0, 0, 458756, 0, 0, 327685, 0, 0, 393221, 0, 0, 458757, 0, 0, 196620, 0, 0, 458773, 262144, 2, 458774, 262144, 2, 458775, 262144, 2, 458758, 0, 0, 458760, 0, 0, 262160, 0, 0, 196626, 0, 0, 393233, 0, 0, 262163, 0, 0, 458770, 0, 0, 458771, 0, 0, 458772, 0, 0, 458759, 0, 0)
+layer_2/tile_data = PackedInt32Array(65559, 65536, 4)
+
+[node name="Player" parent="." instance=ExtResource("3_0twih")]
+position = Vector2(71, 56)
+
+[node name="Hazards" type="Node" parent="."]
+
+[node name="Hazard" parent="Hazards" instance=ExtResource("4_isurt")]
+position = Vector2(128, 64)
+rotation = 3.14159
+
+[node name="Hazard2" parent="Hazards" instance=ExtResource("4_isurt")]
+position = Vector2(96, 96)
+
+[node name="Hazard6" parent="Hazards" instance=ExtResource("4_isurt")]
+position = Vector2(160, 112)
+
+[node name="Hazard7" parent="Hazards" instance=ExtResource("4_isurt")]
+position = Vector2(176, 112)
+
+[node name="Hazard8" parent="Hazards" instance=ExtResource("4_isurt")]
+position = Vector2(192, 112)
+
+[node name="Hazard9" parent="Hazards" instance=ExtResource("4_isurt")]
+position = Vector2(208, 112)
+
+[node name="Hazard10" parent="Hazards" instance=ExtResource("4_isurt")]
+position = Vector2(224, 112)
+
+[node name="Hazard11" parent="Hazards" instance=ExtResource("4_isurt")]
+position = Vector2(240, 112)
+
+[node name="Hazard12" parent="Hazards" instance=ExtResource("4_isurt")]
+position = Vector2(256, 112)
+
+[node name="Hazard13" parent="Hazards" instance=ExtResource("4_isurt")]
+position = Vector2(272, 112)
+
+[node name="Hazard3" parent="Hazards" instance=ExtResource("4_isurt")]
+position = Vector2(128, 96)
+
+[node name="Hazard4" parent="Hazards" instance=ExtResource("4_isurt")]
+position = Vector2(176, 64)
+rotation = -1.5708
+
+[node name="Platform" parent="." instance=ExtResource("5_3cna5")]
+position = Vector2(96, 112)
+relative_destination = Vector2(0, -48)
+
+[node name="Platform2" parent="." instance=ExtResource("5_3cna5")]
+position = Vector2(160, 80)
+relative_destination = Vector2(128, 0)
+
+[node name="SceneTransitionTrigger" parent="." instance=ExtResource("6_ho0kj")]
+position = Vector2(340, 110)
+scale = Vector2(2.5, 0.25)
+scene_to_load = "res://scenes/platform/chapter_1/1-1_grunko.tscn"

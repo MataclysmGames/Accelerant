@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cmnphk4dtgj2x"]
+
+[ext_resource type="FontFile" uid="uid://csaglupb58glo" path="res://external_assets/Roboto_Mono/static/RobotoMono-Light.ttf" id="1_0j6ro"]
+
+[resource]
+default_font = ExtResource("1_0j6ro")
+default_font_size = 8
