@@ -70,11 +70,16 @@ scale = Vector2(1.32, 1)
 interaction_name = &"office_bookcase_2"
 dialogue_scene = true
 
+[node name="InteractionZone6" parent="." instance=ExtResource("6_eoly7")]
+position = Vector2(368, 32)
+interaction_name = &"office_kitchen_fridge"
+dialogue_scene = true
+
 [node name="NPC_Daniel" parent="." instance=ExtResource("7_k3s07")]
 position = Vector2(149, 143)
 
 [node name="NPC_Omar" parent="." instance=ExtResource("8_18rbf")]
-position = Vector2(218, 73)
+position = Vector2(249, 145)
 
 [node name="NPC_Brenda" parent="." instance=ExtResource("9_r4yl8")]
 position = Vector2(421, 199)
@@ -83,8 +88,3 @@ position = Vector2(421, 199)
 position = Vector2(362, 201)
 scale = Vector2(0.52, 2.04)
 cutscene_name = &"standup"
-
-[node name="InteractionZone6" parent="." instance=ExtResource("6_eoly7")]
-position = Vector2(368, 32)
-interaction_name = &"office_kitchen_fridge"
-dialogue_scene = true

@@ -82,7 +82,7 @@ static var dialogue_builders : Array[DialogueBuilder] = [
 	DialogueBuilder.new("office_kitchen_fridge").with_header("Fridge").with_content_list([
 		"There is a small fridge under the countertop.",
 		"Inside it contains a few containers with people's lunches.",
-		"It looks like Matt is a fan of taquitos covered in peanut butter."
+		"It looks like someone is a fan of taquitos covered in peanut butter."
 	]),
 	
 	# Bookcases
