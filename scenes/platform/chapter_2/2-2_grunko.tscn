@@ -1,7 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://c410mbdq3xeai"]
+[gd_scene load_steps=14 format=3 uid="uid://c410mbdq3xeai"]
 
 [ext_resource type="Script" path="res://scripts/levels/0-9_combined.gd" id="1_6m070"]
-[ext_resource type="AudioStream" uid="uid://cd5rvtv475kvn" path="res://assets/hurg.wav" id="2_1rdn2"]
+[ext_resource type="AudioStream" uid="uid://dgo41klkfoc2n" path="res://assets/trapezoid.wav" id="2_1r4vw"]
 [ext_resource type="PackedScene" uid="uid://dy2nsbd7j51u1" path="res://scenes/platform/objects/spreadsheet.tscn" id="3_j17t5"]
 [ext_resource type="PackedScene" uid="uid://6nn5nea1bkbq" path="res://scenes/platform/objects/platform_tile_map.tscn" id="4_xpcb4"]
 [ext_resource type="PackedScene" uid="uid://vwe4gklch4fh" path="res://scenes/platform/objects/platform_player.tscn" id="5_8gbiv"]
@@ -12,10 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://icaaieifs2ir" path="res://scenes/platform/objects/hazard.tscn" id="10_o20d1"]
 [ext_resource type="PackedScene" uid="uid://bgiuwib4vkehr" path="res://scenes/global/interaction_zone.tscn" id="11_q51o1"]
 [ext_resource type="Theme" uid="uid://cmnphk4dtgj2x" path="res://resources/font_theme.tres" id="12_thg4a"]
+[ext_resource type="PackedScene" uid="uid://dxspje27lld8f" path="res://scenes/global/cutscene_trigger.tscn" id="13_50ri2"]
 
 [node name="2-2_Grunko" type="Node2D"]
 script = ExtResource("1_6m070")
-theme = ExtResource("2_1rdn2")
+theme = ExtResource("2_1r4vw")
 
 [node name="PlatformTileMap" parent="." instance=ExtResource("4_xpcb4")]
 position = Vector2(-16, -16)
@@ -29,7 +30,7 @@ num_columns = 14
 num_rows = 32
 
 [node name="Player" parent="." instance=ExtResource("5_8gbiv")]
-position = Vector2(65, 488)
+position = Vector2(240, 96)
 camera_limit_top = -16
 camera_limit_right = 736
 camera_limit_bottom = 576
@@ -290,3 +291,9 @@ theme_override_font_sizes/font_size = 6
 text = "Critical"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="CutsceneTrigger" parent="." instance=ExtResource("13_50ri2")]
+position = Vector2(160, 64)
+scale = Vector2(1, 3)
+cutscene_name = &"clippy_reveal"
+one_shot = false

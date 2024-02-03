@@ -180,7 +180,18 @@ static var dialogue_builders : Array[DialogueBuilder] = [
 		"Guess I better go check out my office. They said it was through the door on the other side of this room."
 	]),
 	#endregion
-
+	#region Clippy Reveal
+	DialogueBuilder.new("clippy_reveal")
+		.with_header("???").with_content_list([
+			"[wave]Ah, I see...[/wave]",
+			"[wave]A new challenger approacheth...[/wave]",
+			"[wave]Tssk tssk tssk, oh Tom...[/wave]",
+			"[wave]How we could have been such friends...[/wave]",
+			"[wave]If only you hadn't...[/wave]",
+			"[color=red][shake]Locked me in here!!![/shake][/color]",
+		]).with_final_id("clippy_reveal_end"),
+	#endregion
+	
 	#region No-Item/No-ActionDone
 	DialogueBuilder.new("no_standup_done").with_header("").with_content_list([
 		"I should join the team for stand-up before exploring."
