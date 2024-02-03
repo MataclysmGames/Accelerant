@@ -17,3 +17,4 @@ func on_trigger(cutscene_name : String):
 func handle_message(message : String, _sender : String):
 	if message == "clippy_reveal_end":
 		BackgroundAudio.play_audio(theme, -10, 1.3, 0.2)
+		

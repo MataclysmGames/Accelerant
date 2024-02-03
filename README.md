@@ -7,8 +7,8 @@ https://mataclysm.itch.io/accelerant
 
 ## Build
 ```
-godot.exe --headless --export-release "Windows Desktop" -q
-godot.exe --headless --export-release "Web" -q
+godot_console.exe --headless --export-release "Windows Desktop" --quiet 2>$null
+godot_console.exe --headless --export-release "Web" --quiet 2>$null
 ```
 
 ## Publish
