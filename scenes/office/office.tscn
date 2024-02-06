@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://scb1xesuglwb"]
+[gd_scene load_steps=13 format=3 uid="uid://scb1xesuglwb"]
 
 [ext_resource type="PackedScene" uid="uid://dnirqsybh7586" path="res://scenes/office/characters/office_player.tscn" id="1_gp0to"]
 [ext_resource type="Script" path="res://scripts/office.gd" id="1_oaapr"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://cfd4fhuh1fs0f" path="res://scenes/office/characters/npc_omar.tscn" id="8_18rbf"]
 [ext_resource type="PackedScene" uid="uid://dxspje27lld8f" path="res://scenes/global/cutscene_trigger.tscn" id="8_nrk4j"]
 [ext_resource type="PackedScene" uid="uid://n8epktbmk87h" path="res://scenes/office/characters/npc_brenda.tscn" id="9_r4yl8"]
+[ext_resource type="PackedScene" uid="uid://dbm8mq2x6yw4k" path="res://scenes/office/characters/generic-worker.tscn" id="11_k2ll5"]
+[ext_resource type="PackedScene" uid="uid://bwoxdmley5x3h" path="res://scenes/office/characters/generic_worker_female.tscn" id="12_xwv35"]
 
 [node name="Office" type="Node2D"]
 y_sort_enabled = true
@@ -79,7 +81,7 @@ dialogue_scene = true
 position = Vector2(149, 143)
 
 [node name="NPC_Omar" parent="." instance=ExtResource("8_18rbf")]
-position = Vector2(249, 145)
+position = Vector2(216, 75)
 
 [node name="NPC_Brenda" parent="." instance=ExtResource("9_r4yl8")]
 position = Vector2(421, 199)
@@ -88,3 +90,39 @@ position = Vector2(421, 199)
 position = Vector2(362, 201)
 scale = Vector2(0.52, 2.04)
 cutscene_name = &"standup"
+
+[node name="GenericWorker" parent="." instance=ExtResource("11_k2ll5")]
+position = Vector2(41, 126)
+
+[node name="GenericWorker2" parent="." instance=ExtResource("11_k2ll5")]
+position = Vector2(104, 126)
+
+[node name="GenericWorker3" parent="." instance=ExtResource("11_k2ll5")]
+position = Vector2(72, 191)
+
+[node name="GenericWorker4" parent="." instance=ExtResource("11_k2ll5")]
+position = Vector2(312, 125)
+
+[node name="GenericWorker5" parent="." instance=ExtResource("11_k2ll5")]
+position = Vector2(281, 191)
+
+[node name="GenericWorker6" parent="." instance=ExtResource("11_k2ll5")]
+position = Vector2(248, 190)
+
+[node name="GenericWorker7" parent="." instance=ExtResource("11_k2ll5")]
+position = Vector2(280, 63)
+
+[node name="GenericWorkerFemale" parent="." instance=ExtResource("12_xwv35")]
+position = Vector2(248, 126)
+
+[node name="GenericWorkerFemale2" parent="." instance=ExtResource("12_xwv35")]
+position = Vector2(40, 190)
+
+[node name="GenericWorkerFemale3" parent="." instance=ExtResource("12_xwv35")]
+position = Vector2(72, 62)
+
+[node name="GenericWorkerFemale4" parent="." instance=ExtResource("12_xwv35")]
+position = Vector2(41, 62)
+
+[node name="GenericWorkerFemale5" parent="." instance=ExtResource("12_xwv35")]
+position = Vector2(248, 62)

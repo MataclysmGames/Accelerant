@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://dfw7ugeh883i"]
 
-[ext_resource type="Script" path="res://scripts/levels/1-1_grunko.gd" id="1_ku6bw"]
-[ext_resource type="AudioStream" uid="uid://co18aksti8mha" path="res://assets/merp.wav" id="2_1pd8x"]
+[ext_resource type="Script" path="res://scripts/levels/2-1_grunko.gd" id="1_4twv3"]
+[ext_resource type="AudioStream" uid="uid://dgo41klkfoc2n" path="res://assets/trapezoid.wav" id="2_fmcpu"]
 [ext_resource type="PackedScene" uid="uid://dy2nsbd7j51u1" path="res://scenes/platform/objects/spreadsheet.tscn" id="3_y6fye"]
 [ext_resource type="PackedScene" uid="uid://6nn5nea1bkbq" path="res://scenes/platform/objects/platform_tile_map.tscn" id="4_lxury"]
 [ext_resource type="PackedScene" uid="uid://vwe4gklch4fh" path="res://scenes/platform/objects/platform_player.tscn" id="5_l8rpg"]
@@ -13,8 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://bwakp2pfegwpx" path="res://scenes/global/scene_transition_trigger.tscn" id="11_xlwn4"]
 
 [node name="2-1_Grunko" type="Node2D"]
-script = ExtResource("1_ku6bw")
-theme = ExtResource("2_1pd8x")
+script = ExtResource("1_4twv3")
+theme = ExtResource("2_fmcpu")
 
 [node name="Spreadsheet" parent="." instance=ExtResource("3_y6fye")]
 num_columns = 9

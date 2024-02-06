@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://c4hsfc2eje8rk"]
 
-[ext_resource type="Script" path="res://scripts/levels/1-1_grunko.gd" id="1_08te4"]
-[ext_resource type="AudioStream" uid="uid://co18aksti8mha" path="res://assets/merp.wav" id="2_p0pa3"]
+[ext_resource type="Script" path="res://scripts/levels/0-8_finale.gd" id="1_08te4"]
+[ext_resource type="AudioStream" uid="uid://cd5rvtv475kvn" path="res://assets/hurg.wav" id="2_vwtry"]
 [ext_resource type="PackedScene" uid="uid://dy2nsbd7j51u1" path="res://scenes/platform/objects/spreadsheet.tscn" id="3_1lus0"]
 [ext_resource type="PackedScene" uid="uid://6nn5nea1bkbq" path="res://scenes/platform/objects/platform_tile_map.tscn" id="4_drtdl"]
 [ext_resource type="PackedScene" uid="uid://vwe4gklch4fh" path="res://scenes/platform/objects/platform_player.tscn" id="5_qrv6s"]
@@ -15,7 +15,7 @@
 
 [node name="0-8_Finale" type="Node2D"]
 script = ExtResource("1_08te4")
-theme = ExtResource("2_p0pa3")
+theme = ExtResource("2_vwtry")
 
 [node name="Spreadsheet" parent="." instance=ExtResource("3_1lus0")]
 num_columns = 10

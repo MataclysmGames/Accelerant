@@ -63,7 +63,12 @@ func set_time_played():
 	var d_min = (duration / (1000 * 60)) % 60
 	var d_hr = (duration / (1000 * 60 * 60)) % 24
 	var d_day = (duration / (1000 * 60 * 60 * 24))
-	time_played_label.text = "Time: %02d:%02d:%02d:%02d.%03d" % [d_day, d_hr, d_min, d_sec, d_ms]
+	if d_day > 0:
+		time_played_label.text = "Time: %02d:%02d:%02d:%02d.%03d" % [d_day, d_hr, d_min, d_sec, d_ms]
+	elif d_hr > 0:
+		time_played_label.text = "Time: %02d:%02d:%02d.%03d" % [d_hr, d_min, d_sec, d_ms]
+	else:
+		time_played_label.text = "Time: %02d:%02d.%03d" % [d_min, d_sec, d_ms]
 
 func set_num_deaths():
 	num_deaths_label.text = "Deaths: " + str(GameState.get_death_count())

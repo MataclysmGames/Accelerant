@@ -189,7 +189,7 @@ static var dialogue_builders : Array[DialogueBuilder] = [
 			"[wave]How we could have been such friends...[/wave]",
 			"[wave]If only you hadn't...[/wave]",
 			"[color=red][shake]Locked me in here!!![/shake][/color]",
-		]).with_final_id("clippy_reveal_end"),
+		]).with_next_id("clippy_reveal_end"),
 	#endregion
 	
 	#region No-Item/No-ActionDone

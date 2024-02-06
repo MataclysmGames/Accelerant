@@ -4,7 +4,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	BackgroundAudio.play_audio(theme, -20, 0.2)
+	BackgroundAudio.play_audio(theme, -20, 0.85)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

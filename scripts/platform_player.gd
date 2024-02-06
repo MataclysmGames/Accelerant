@@ -36,6 +36,7 @@ var reload_position : Vector2
 var can_zoom : bool = true
 var frames_since_grounded = 0
 var has_jumped : bool = false
+var is_perma_disabled : bool = false
 
 # Camera target
 var target_list_size = 60
@@ -113,6 +114,10 @@ func enable_zooming():
 	can_zoom = true
 
 func handle_vertical_movement(delta):
+	if is_perma_disabled:
+		# Let the script controlling the player decide what their velocity should be
+		return
+		
 	if is_on_floor():
 		has_jumped = false
 		frames_since_grounded = 0
@@ -130,6 +135,10 @@ func handle_vertical_movement(delta):
 			has_jumped = true
 
 func handle_horizontal_movement(_delta):
+	if is_perma_disabled:
+		# Let the script controlling the player decide what their velocity should be
+		return
+		
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("left", "right")
@@ -220,7 +229,17 @@ func kill(_killer : Node2D):
 		GlobalEventBus.message.emit("death", "PlatformPlayer")
 	else:
 		print("You are already dead")
-		
+
+func permanently_disable():
+	can_handle_user_input = false
+	is_perma_disabled = true
+	interaction_icon.visible = false
+	interaction_count = 0
+
+func permanently_enable():
+	can_handle_user_input = true
+	is_perma_disabled = false
+
 func disable_input():
 	can_handle_user_input = false
 	interaction_icon.visible = false

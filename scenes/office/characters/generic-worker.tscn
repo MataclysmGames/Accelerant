@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbm8mq2x6yw4k"]
+
+[ext_resource type="Texture2D" uid="uid://ddbw7ojfgdcvw" path="res://assets/office-generic-person.png" id="1_0byb7"]
+[ext_resource type="Script" path="res://scripts/generic-worker.gd" id="1_4g0yn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77oxm"]
+atlas = ExtResource("1_0byb7")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1t3h4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77oxm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="GenericWorker" type="Node2D"]
+z_index = 1
+script = ExtResource("1_4g0yn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1t3h4")
+autoplay = "default"
