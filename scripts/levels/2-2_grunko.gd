@@ -23,7 +23,7 @@ func handle_message(message : String, _sender : String):
 		player.permanently_disable()
 		player.sprite.play()
 		player.camera.limit_right = 1392
-		player.camera.limit_top = -80
+		player.camera.limit_top = -64
 		var tween = create_tween()
 		tween.tween_property(player, "position", Vector2(176, 80), 2)
 		tween.tween_property(player, "velocity", Vector2(1200, -10), 0.1)
