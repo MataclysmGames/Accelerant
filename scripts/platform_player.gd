@@ -127,6 +127,9 @@ func handle_vertical_movement(delta):
 		var fall_factor = 0.4 if Input.is_action_pressed("jump") else 0.6
 		velocity.y += gravity * fall_factor * delta
 		velocity.y = min(velocity.y, MAX_FALL_SPEED)
+		
+		if velocity.y > 0 and sprite.animation != "fall":
+			sprite.animation = "fall"
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump"):
@@ -148,15 +151,17 @@ func handle_horizontal_movement(_delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED / 2)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED / 3)
-		
+	
+	if is_on_floor():
+		if velocity.x != 0:
+			sprite.animation = "run"
+		else:
+			sprite.animation = "idle"
+
 	if velocity.x < 0:
 		sprite.flip_h = true
-		sprite.animation = "run"
 	elif velocity.x > 0:
 		sprite.flip_h = false
-		sprite.animation = "run"
-	else:
-		sprite.animation = "idle"
 
 func handle_camera_target():
 	# Update list of last n velocity values
@@ -216,8 +221,8 @@ func _process(_delta):
 
 func _physics_process(delta):
 	if is_alive and can_handle_user_input:
-		handle_vertical_movement(delta)
 		handle_horizontal_movement(delta)
+		handle_vertical_movement(delta)
 		move_and_slide()
 		handle_camera_target()
 
