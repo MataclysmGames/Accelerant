@@ -13,13 +13,13 @@ var flip_index = 0
 func _ready():
 	tween = create_tween()
 	tween.tween_interval(randf_range(1, 5))
-	tween.tween_callback(func(): flip_sprite_periodically = true)
+	tween.tween_callback(turn_on_flip)
 	tween.tween_interval(randf_range(0.25, 1))
-	tween.tween_callback(func(): flip_sprite_periodically = false)
+	tween.tween_callback(turn_off_flip)
 	tween.set_loops()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if flip_sprite_periodically and should_flip():
 		animated_sprite_2d.flip_h = not animated_sprite_2d.flip_h
 		flip_index = 0
@@ -27,3 +27,9 @@ func _process(delta):
 
 func should_flip() -> bool:
 	return flip_index > frames_until_flip
+
+func turn_on_flip():
+	flip_sprite_periodically = true
+	
+func turn_off_flip():
+	flip_sprite_periodically = false

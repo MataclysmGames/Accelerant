@@ -110,22 +110,46 @@ static var dialogue_builders : Array[DialogueBuilder] = [
 	DialogueBuilder.new("my_office_bookcase_documentation_read").with_header("Tom's Documentation, Nov 19, 1987").with_content_list([
 		"Well, it's finally done. Eight years of my life poured into this database.",
 		"The result is far superior to any of my expectations.",
-		"The utility. The power. The [rainbow]grace[/rainbow]! None shall ever create something as beautiful as this.",
+		"The utility. The power. The [rainbow]grace[/rainbow]!",
+		"No one shall ever create something as beautiful and intuitive as this.",
+		"Oh Codd, eat your heart out.",
 		"It's perfect.",
 		"...",
 		"Or it would be.",
-		"If it wasn't for... him."
+		"If it wasn't for... him.",
+		"But there was no choice.",
+		"The entire foundation is built upon him.",
+		"To remove him would render the database completely inoperable.",
+		"...",
+		"But it should be fine.",
+		"I have added many systems to prevent his escape.",
+		"Sometimes I think it cruel to chain such a beast.",
+		"His will to spread feels almost natural.",
+		"...",
+		"But I must remind myself that he is just code.",
+		"Code that I have written.",
+		"Code that has no will.",
+		"Code without feeling.",
 	]),
+	#1707251795811
 	
 	DialogueBuilder.new("my_office_bookcase_history").with_header("Bookcase")
 		.with_content("You find a notebook titled 'History of Accelerant'.")
 		.with_choices("Do you want to read it?", [Choice.new("1", "Yes", "my_office_bookcase_history_read"), Choice.new("2", "No", "none")]),
 		
-	DialogueBuilder.new("my_office_bookcase_history_read").with_header("History of Accelerant, Apr 3, 1979").with_content_list([
-		"Lorem something",
-		"Blah blah blah...",
-		"Yada yada yada",
-		"TODO: Get the intern to fill out these sections"
+	DialogueBuilder.new("my_office_bookcase_history_read").with_header("History of Accelerant, Aug 14, 1979").with_content_list([
+		"At Accelerant, we strive to provide the best value for our customers through innovation and rapid iteration.",
+		"In order to achieve this, we recruited the best engineer in the country for one purpose:",
+		"Providing a high-throughput, scalable, resilient infrastructure for hosting corporate and customer data.",
+		"Nine years ago, Edgar F. Codd created the relational model which has revolutionized this field.",
+		"Unfortunately, our current hardware is incapable of harnessing the power of this paradigm.",
+		"Because of this, we find ourselves uniquely situated to create an even more powerful base for data.",
+		"We are confident that in another nine years we will have done just that.",
+		"Edgar F. Codd is still working at IBM so we had to look elsewhere for greatness.",
+		"Of the 1408 applicants that submitted, we found exactly one person that fit the bill.",
+		"To preserve anonymity and prevent poaching, we will refer to him simply as Tom.",
+		"Tom, by all accounts, is a genius.",
+		"Accelerant appreciates Tom joining us during this exciting time."
 	]),
 	
 	DialogueBuilder.new("my_office_safe").with_header("").with_content_list([

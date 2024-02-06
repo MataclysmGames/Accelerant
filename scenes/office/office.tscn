@@ -92,37 +92,37 @@ scale = Vector2(0.52, 2.04)
 cutscene_name = &"standup"
 
 [node name="GenericWorker" parent="." instance=ExtResource("11_k2ll5")]
-position = Vector2(41, 126)
+position = Vector2(40, 124)
 
 [node name="GenericWorker2" parent="." instance=ExtResource("11_k2ll5")]
-position = Vector2(104, 126)
+position = Vector2(104, 125)
 
 [node name="GenericWorker3" parent="." instance=ExtResource("11_k2ll5")]
-position = Vector2(72, 191)
+position = Vector2(72, 190)
 
 [node name="GenericWorker4" parent="." instance=ExtResource("11_k2ll5")]
 position = Vector2(312, 125)
 
 [node name="GenericWorker5" parent="." instance=ExtResource("11_k2ll5")]
-position = Vector2(281, 191)
+position = Vector2(280, 189)
 
 [node name="GenericWorker6" parent="." instance=ExtResource("11_k2ll5")]
 position = Vector2(248, 190)
 
 [node name="GenericWorker7" parent="." instance=ExtResource("11_k2ll5")]
-position = Vector2(280, 63)
+position = Vector2(280, 62)
 
 [node name="GenericWorkerFemale" parent="." instance=ExtResource("12_xwv35")]
 position = Vector2(248, 126)
 
 [node name="GenericWorkerFemale2" parent="." instance=ExtResource("12_xwv35")]
-position = Vector2(40, 190)
+position = Vector2(40, 189)
 
 [node name="GenericWorkerFemale3" parent="." instance=ExtResource("12_xwv35")]
 position = Vector2(72, 62)
 
 [node name="GenericWorkerFemale4" parent="." instance=ExtResource("12_xwv35")]
-position = Vector2(41, 62)
+position = Vector2(41, 61)
 
 [node name="GenericWorkerFemale5" parent="." instance=ExtResource("12_xwv35")]
 position = Vector2(248, 62)

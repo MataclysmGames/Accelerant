@@ -49,7 +49,7 @@ func _process(_delta):
 
 func play_button_pressed():
 	GameState.set_start_time()
-	SceneLightingGlobal.fade_in_scene_no_fade_out("res://scenes/office/office_reception.tscn", 2)
+	SceneLightingGlobal.fade_in_scene("res://scenes/office/office_reception.tscn", 0, 2)
 
 func exit_button_pressed():
 	get_tree().quit()

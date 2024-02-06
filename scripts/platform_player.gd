@@ -88,7 +88,7 @@ func handle_mouse_click():
 		position = get_global_mouse_position()
 	
 func handle_reset():
-	if Input.is_action_just_pressed("reset"):
+	if not is_perma_disabled and Input.is_action_just_pressed("reset"):
 		if reload_scene_on_death:
 			get_tree().reload_current_scene()
 		else:

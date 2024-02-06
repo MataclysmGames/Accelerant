@@ -4,6 +4,9 @@ extends AnimatableBody2D
 @export var max_movement : int = 3
 @export var movement_delta : Vector2i = Vector2i(0, -16)
 @export var movement_duration : float = 1.0
+@export var color : Color = Color.BLACK
+
+@onready var color_rect : ColorRect = $ColorRect
 
 var initial_position : Vector2
 var current_movement_index : int = 0
@@ -13,6 +16,7 @@ var is_moving = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	initial_position = position
+	color_rect.color = color
 
 func move():
 	if not is_moving:

@@ -15,6 +15,8 @@ func _init():
 		["omar_set_expenses_end", "omar_set_expenses_end"],
 		["chapter_1_finish", "omar_set_expenses_complete"],
 		["omar_set_expenses_complete_end", "omar_set_expenses_complete_end"],
+		["chapter_2_finish", "omar_final"],
+		["omar_final_end", "omar_final_end"],
 	]
 	dialogue_builders = [
 		DialogueBuilder.new("omar_welcome").with_header("Omar").with_content_list([
@@ -55,6 +57,19 @@ func _init():
 			"Just between you and me, I didn't think [shake]anyone[/shake] could do Tom's job.",
 			"No one else here has any idea what you database guys do in there.",
 			"But you get the job done and that's all that matters.",
+		]),
+		
+		DialogueBuilder.new("omar_final").with_header("Omar").with_content_list([
+			"Hey! Good work, kid.",
+			"Got any plans for the weekend?",
+			"I'll just be relaxing at home with Mary.",
+			"Our 45 year anniversary is next week! Can you believe it?",
+			"Ah, how time flies...",
+		]).with_next_id("omar_final_end"),
+		
+		DialogueBuilder.new("omar_final_end").with_header("Omar").with_content_list([
+			"Let's catch up later.",
+			"Got another meeting in a few minutes."
 		]),
 	]
 	super()

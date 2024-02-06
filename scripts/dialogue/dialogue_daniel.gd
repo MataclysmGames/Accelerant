@@ -14,7 +14,9 @@ func _init():
 		["chapter_0_finish", "daniel_active_users_complete"],
 		["daniel_active_users_complete_end", "daniel_active_users_complete_end"],
 		["chapter_1_finish", "daniel_suspicious_reports"],
-		["daniel_suspicious_reports_end", "daniel_suspicious_reports_end"]
+		["daniel_suspicious_reports_end", "daniel_suspicious_reports_end"],
+		["chapter_2_finish", "daniel_final"],
+		["daniel_final_end", "daniel_final_end"],
 	]
 	dialogue_builders = [
 		DialogueBuilder.new("daniel_welcome").with_header("Daniel").with_content_list([
@@ -60,6 +62,20 @@ func _init():
 		DialogueBuilder.new("daniel_suspicious_reports_end").with_header("Daniel").with_content_list([
 			"Anyway, better go talk to Brenda and see if she has any info for you.",
 			"Good luck!"
+		]),
+		
+		DialogueBuilder.new("daniel_final").with_header("Daniel").with_content_list([
+			"Hey, how's it going?",
+			"Got any plans for the weekend?",
+			"I'm going backpacking with the family.",
+			"Little Danny is already 8! Can you believe it?",
+			"Ah, how time flies..."
+		]).with_next_id("daniel_final_end"),
+		
+		DialogueBuilder.new("daniel_final_end").with_header("Daniel").with_content_list([
+			"Looks like I've got a meeting with the CTO in a few minutes.",
+			"I need to mentally prepare.",
+			"I'll catch up with you later."
 		]),
 	]
 	super()

@@ -13,6 +13,7 @@ func _init():
 		["daniel_suspicious_reports_end", "brenda_suspicious_reports"],
 		["brenda_suspicious_reports_end", "brenda_suspicious_reports_end"],
 		["chapter_2_finish", "brenda_chapter_2_finish"],
+		["brenda_chapter_2_finish_end", "brenda_chapter_2_finish_end"],
 		["chapter_3_finish", "brenda_fire_employee"],
 		["brenda_fire_employee_end", "brenda_fire_employee_end"],
 		["chapter_4_finish", "brenda_fire_employee_complete"],
@@ -54,10 +55,23 @@ func _init():
 		]).with_final_id("suspicious_reports_need_safe"),
 		
 		DialogueBuilder.new("brenda_chapter_2_finish").with_header("Brenda").with_content_list([
-			"Hey did you figure out what that suspicious activity was?",
-			"What!? A virus!?",
-			"Okay we need to have an all-hands meeting immediately.",
-		]).with_next_id("game_end"),
+			"Hmm? Oh hey, what's up?",
+		]).with_header("").with_content("*You hand the report to Brenda*")
+		.with_header("Brenda").with_content_list([
+			"Oh right! The report!",
+			"*quickly flips through the report*",
+			"Mhmm...",
+			"Yep...",
+			"I see...",
+			"I don't know what any of this means.",
+			"But I trust you'll be able to handle it.",
+		]).with_next_id("brenda_chapter_2_finish_end"),
+		
+		DialogueBuilder.new("brenda_chapter_2_finish_end").with_header("Brenda").with_content_list([
+			"I just don't know how to help you.",
+			"Tom was the only person that understood how any of this works!",
+			"Please, just do [rainbow]something[/rainbow]!"
+		]).with_next_id("chapter_3_start"),
 		
 		DialogueBuilder.new("brenda_fire_employee").with_header("Brenda").with_content_list([
 			"Oh I don't know what to do.",
