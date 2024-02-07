@@ -29,6 +29,7 @@ static var dialogue_entities : Array[DialogueEntity] = [
 	DialogueOmar.singleton(),
 	DialogueBrenda.singleton(),
 	DialogueMolly.singleton(),
+	DialogueTom.singleton()
 ]
 
 static var dialogue_builders : Array[DialogueBuilder] = [

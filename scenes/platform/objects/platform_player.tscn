@@ -95,10 +95,6 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4en06"]
-radius = 4.0
-height = 14.0
-
 [sub_resource type="Gradient" id="Gradient_3c75o"]
 colors = PackedColorArray(0.863286, 2.69532e-06, 0.527448, 1, 0.863286, 2.69532e-06, 0.527448, 1)
 
@@ -106,6 +102,10 @@ colors = PackedColorArray(0.863286, 2.69532e-06, 0.527448, 1, 0.863286, 2.69532e
 gradient = SubResource("Gradient_3c75o")
 width = 8
 height = 8
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4en06"]
+radius = 4.0
+height = 14.0
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 2
@@ -119,11 +119,7 @@ z_index = 2
 sprite_frames = SubResource("SpriteFrames_bd64m")
 animation = &"run"
 autoplay = "idle"
-frame_progress = 0.0456379
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
-shape = SubResource("CapsuleShape2D_4en06")
+frame_progress = 0.0913868
 
 [node name="CameraTarget" type="RemoteTransform2D" parent="."]
 visible = false
@@ -151,3 +147,7 @@ transform = Transform2D(1, 0, 0, 1, 48, 128)
 [node name="InteractionIcon" parent="." instance=ExtResource("5_wprqc")]
 visible = false
 position = Vector2(0, -13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_4en06")

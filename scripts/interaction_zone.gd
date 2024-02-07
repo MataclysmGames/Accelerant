@@ -50,6 +50,8 @@ func _process(_delta):
 				GlobalEventBus.message.emit(interaction_name, "InteractionZone")
 				PlayerLoadPosition.set_player_load_position(Vector2(-8, 0))
 				SceneLightingGlobal.fade_in_scene("res://scenes/office/my_office.tscn")
+			"npc_tom":
+				player_node.show_dialogue_node(DialogueTom.singleton().get_active_dialogue())
 			"npc_molly":
 				player_node.show_dialogue_node(DialogueMolly.singleton().get_active_dialogue())
 			"npc_brenda":

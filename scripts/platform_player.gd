@@ -217,7 +217,7 @@ func _process(_delta):
 		handle_cell_selection()
 		handle_reset()
 		handle_zoom()
-		#handle_mouse_click()
+		handle_mouse_click()
 
 func _physics_process(delta):
 	if is_alive and can_handle_user_input:
@@ -272,3 +272,9 @@ func show_dialogue_scene(id : String):
 
 func show_dialogue_node(node : DialogueNode):
 	static_dialogue.show_dialogue_node(node)
+
+func kill_reload_position(pos : Vector2):
+	PlayerLoadPosition.set_player_load_position(pos)
+	reload_position = pos
+	reload_scene_on_death = true
+	kill(null)

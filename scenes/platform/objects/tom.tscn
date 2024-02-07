@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5fgfks0ctsa3"]
+
+[ext_resource type="Texture2D" uid="uid://ciuwcqlunfgag" path="res://assets/tom.png" id="1_rdxyf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_leupc"]
+atlas = ExtResource("1_rdxyf")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fahsj"]
+atlas = ExtResource("1_rdxyf")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2w67h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_leupc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fahsj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tvbr5"]
+radius = 6.0
+height = 18.0
+
+[node name="Tom" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2w67h")
+autoplay = "default"
+frame_progress = 0.293111
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_tvbr5")
