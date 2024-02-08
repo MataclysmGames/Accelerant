@@ -7,6 +7,7 @@ extends Node2D
 
 @onready var player : PlatformPlayer = $Player
 @onready var clippy : Clippy = $Clippy
+@onready var torch = $Torch
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -47,6 +48,9 @@ func handle_message(message : String, _sender : String):
 		tween.tween_callback(func(): clippy.speed = 85)
 		tween.tween_callback(func(): player.permanently_enable())
 	elif message == "chapter_2_finish":
-		player.disable_input()
+		player.permanently_disable()
+		player.sprite.stop()
+		player.velocity = Vector2(0, 0)
+		torch.create_tween().tween_property(torch, "energy", 0, 0.5)
 		PlayerLoadPosition.set_player_load_position(Vector2(-8, 0))
 		SceneLightingGlobal.fade_in_scene("res://scenes/office/my_office.tscn")

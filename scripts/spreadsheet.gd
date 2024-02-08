@@ -15,7 +15,7 @@ func _ready():
 	start_function_label_flash()
 	columnGen.generate(num_columns - 1)
 	rowGen.generate(num_rows - 1)
-			
+
 func start_function_label_flash():
 	var tween = functionLabel.create_tween()
 	tween.tween_callback(func(): functionLabel.text = " fx=|")

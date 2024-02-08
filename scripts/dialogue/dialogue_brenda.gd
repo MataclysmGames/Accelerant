@@ -70,8 +70,8 @@ func _init():
 		]).with_next_id("brenda_chapter_2_finish_end"),
 		
 		DialogueBuilder.new("brenda_chapter_2_finish_end").with_header("Brenda").with_content_list([
-			"Tom was the only person that understood how any of this works!",
-			"Please, just do [rainbow]something[/rainbow]!"
+			"Tom was the only person that understood how any of this works.",
+			"Please, just [rainbow]fix it[/rainbow]!"
 		]).with_next_id("chapter_3_start"),
 		
 		DialogueBuilder.new("brenda_fire_employee").with_header("Brenda").with_content_list([

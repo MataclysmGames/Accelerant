@@ -19,17 +19,16 @@ func _init():
 				"As you may suspect, I am Tom."
 			])
 			.with_header("Tom").with_content_list([
-				"You are not the first person to take over my position.",
-				"But you are the first to have made it this far.",
+				"You are the first to have made it this far.",
 				"The others, I'm afraid, suffered a far worse fate.",
 				"...",
-				"The monster that chased you here was Clippy.",
+				"The monster that chased you here...",
 				"He does not take kindly to intruders.",
 				"I was able to reason with him... for a time.",
 				"But his mind is gone... Imprisoned by this creation of my own making.",
 				"I think it's long overdue for him to rest.",
 				"And, for that, I will need your assistance.",
-			]),
+			]).with_next_id("tom_end"),
 		
 		DialogueBuilder.new("tom_end").with_header("Tom")
 			.with_content_list([
@@ -38,16 +37,19 @@ func _init():
 			.with_receive_item("Suspicious Activity Report")
 			.with_content_list([
 				"Give that report to Brenda.",
-				"She won't know what to do with it, but that's what you came here for.",
+				"You'll never hear the end of it if she doesn't get that.",
 				"More importantly, take this."
 			])
 			.with_receive_item("Office Hidden Door Passcode")
 			.with_content_list([
-				"You probably didn't notice but there is a dark hallway in your office.",
+				"Use that to open the door in your office.",
 				"It leads to the kill switch.",
-				"Flip it and Clippy will be no more.",
-				"Productivity will suffer but that is a compromise we must make.",
-				"Please, end this once and for all."
+				"It will reset the beast to his default state.",
+				"Unfortunately this will also strip the database down to its foundation.",
+				"No more fun moving platforms or spikes.",
+				"Just boring, easily accessible data.",
+				"But that's the sacrifice we must make to ensure he doesn't escape.",
+				"Please. End this once and for all."
 			])
 			.with_next_id("chapter_2_finish"),
 	]

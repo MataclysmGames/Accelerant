@@ -32,21 +32,20 @@ func _process(_delta):
 				player_node.disable_input()
 				if not GameState.has_done_action("chapter_0_finish"):
 					SceneLightingGlobal.fade_in_scene("res://scenes/office/office_computer.tscn")
-				elif GameState.has_done_action("chapter_1_start") and not GameState.has_done_action("chapter_1_finish"):
-					SceneLightingGlobal.fade_in_scene("res://scenes/platform/title_screen.tscn")
-				elif GameState.has_done_action("chapter_2_start") and not GameState.has_done_action("chapter_2_finish"):
-					SceneLightingGlobal.fade_in_scene("res://scenes/platform/title_screen.tscn")
-				elif GameState.has_done_action("chapter_3_start") and not GameState.has_done_action("chapter_3_finish"):
-					if not GameState.has_done_action("reset_button_pressed"):
-						player_node.show_dialogue_scene("investigate_hallway")
-					else:
+				elif not GameState.has_done_action("reset_button_pressed"):
+					if GameState.has_done_action("chapter_1_start") and not GameState.has_done_action("chapter_1_finish"):
 						SceneLightingGlobal.fade_in_scene("res://scenes/platform/title_screen.tscn")
-				elif GameState.has_done_action("chapter_4_start") and not GameState.has_done_action("chapter_4_finish"):
-					SceneLightingGlobal.fade_in_scene("res://scenes/platform/title_screen.tscn")
-				elif GameState.has_done_action("game_end"):
-					SceneLightingGlobal.fade_in_scene("res://scenes/platform/title_screen.tscn")
+					elif GameState.has_done_action("chapter_2_start") and not GameState.has_done_action("chapter_2_finish"):
+						SceneLightingGlobal.fade_in_scene("res://scenes/platform/title_screen.tscn")
+					else:
+						player_node.show_dialogue_scene("no_need_for_computer")
 				else:
-					player_node.show_dialogue_scene("no_need_for_computer")
+					if GameState.has_done_action("chapter_3_start") and not GameState.has_done_action("chapter_3_finish"):
+						SceneLightingGlobal.fade_in_scene("res://scenes/platform/title_screen_after_button.tscn")
+					elif GameState.has_done_action("chapter_4_start") and not GameState.has_done_action("chapter_4_finish"):
+						SceneLightingGlobal.fade_in_scene("res://scenes/platform/title_screen_after_button.tscn")
+					else:
+						player_node.show_dialogue_scene("no_need_for_computer")
 			"my_office_secret_door":
 				if GameState.has_item("Office Hidden Door Passcode"):
 					player_node.show_dialogue_scene("my_office_secret_door_with_passcode")
