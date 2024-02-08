@@ -34,7 +34,7 @@ num_columns = 14
 num_rows = 32
 
 [node name="Player" parent="." instance=ExtResource("5_8gbiv")]
-position = Vector2(250, 100)
+position = Vector2(64, 480)
 collision_mask = 23
 camera_limit_top = -16
 camera_limit_right = 736
@@ -81,7 +81,6 @@ vertical_alignment = 1
 position = Vector2(2785, 82)
 scale = Vector2(3.83992, 1.88)
 interaction_name = &"npc_tom"
-dialogue_scene = null
 
 [node name="ClippyCutsceneTrigger" parent="." instance=ExtResource("13_50ri2")]
 position = Vector2(160, 64)
@@ -99,13 +98,12 @@ one_shot = false
 position = Vector2(2781, 60)
 scale = Vector2(5, 5)
 color = Color(1, 1, 1, 1)
-blend_mode = 0
 
 [node name="Torch" parent="." instance=ExtResource("14_apofa")]
 position = Vector2(2783, 110)
 scale = Vector2(5, 5)
-color = Color(1, 1, 1, 1)
-energy = 1.37
+color = Color(1, 0.494118, 0.427451, 1)
+energy = 2.0
 
 [node name="Hazards" type="Node" parent="."]
 

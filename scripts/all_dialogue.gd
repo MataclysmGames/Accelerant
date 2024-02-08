@@ -104,6 +104,7 @@ static var dialogue_builders : Array[DialogueBuilder] = [
 		"You find nothing of interest."
 	]),
 	
+	# My Office
 	DialogueBuilder.new("my_office_bookcase_documentation").with_header("Bookcase")
 		.with_content("You find a notebook titled 'Documentation'.")
 		.with_choices("Do you want to read it?", [Choice.new("1", "Yes", "my_office_bookcase_documentation_read"), Choice.new("2", "No", "none")]),
@@ -132,7 +133,6 @@ static var dialogue_builders : Array[DialogueBuilder] = [
 		"Code that has no will.",
 		"Code without feeling.",
 	]),
-	#1707251795811
 	
 	DialogueBuilder.new("my_office_bookcase_history").with_header("Bookcase")
 		.with_content("You find a notebook titled 'History of Accelerant'.")
@@ -171,6 +171,38 @@ static var dialogue_builders : Array[DialogueBuilder] = [
 		"The hastily written note reads:",
 		"[p]Username: superadmin[p]Password: changeme2",
 	]).with_final_id("chapter_2_start"),
+	
+	DialogueBuilder.new("my_office_secret_door_without_passcode").with_header("").with_content_list([
+		"There is a metal door with a keypad next to it."
+	]),
+	
+	DialogueBuilder.new("my_office_secret_door_already_open").with_header("").with_content_list([
+		"The door is open."
+	]),
+	
+	DialogueBuilder.new("my_office_secret_door_with_passcode").with_header("").with_content_list([
+		"There is a metal door with a keypad next to it."
+	])
+	.with_choices("Do you enter the passcode?", [Choice.new("1", "Yes", "my_office_secret_door_with_passcode_yes"), Choice.new("2", "No", "none")]),
+	
+	DialogueBuilder.new("my_office_secret_door_with_passcode_yes").with_header("").with_content_list([
+		"The keypad flashes green and the door begins to open."
+	]).with_next_id("my_office_secret_door_open"),
+	
+	DialogueBuilder.new("reset_button").with_header("")
+	.with_content_list([
+		"Big red button..."
+	])
+	.with_choices("Do you press it?", [Choice.new("1", "Yes", "reset_button_yes"), Choice.new("2", "No", "none")]),
+	
+	DialogueBuilder.new("reset_button_yes").with_header("").with_content_list([
+		"*click*"
+	]).with_next_id("reset_button_pressed"),
+	
+	DialogueBuilder.new("reset_button_already_pressed").with_header("")
+	.with_content_list([
+		"Hmm... probably shouldn't press it again..."
+	]),
 	#endregion
 	
 	#Cutscenes

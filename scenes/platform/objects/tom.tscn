@@ -21,7 +21,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 1.0
+"speed": 0.75
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tvbr5"]
@@ -33,9 +33,10 @@ height = 18.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2w67h")
 autoplay = "default"
-frame_progress = 0.293111
+frame_progress = 0.613058
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 shape = SubResource("CapsuleShape2D_tvbr5")

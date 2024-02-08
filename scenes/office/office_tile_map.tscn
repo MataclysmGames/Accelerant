@@ -1,6 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://nie1gx4wd1yq"]
+[gd_scene load_steps=5 format=3 uid="uid://nie1gx4wd1yq"]
 
 [ext_resource type="Texture2D" uid="uid://dvlerx87cj2kf" path="res://assets/office-levels.png" id="1_b1ap2"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ydydi"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ebjbl"]
 texture = ExtResource("1_b1ap2")
@@ -17,6 +20,7 @@ texture = ExtResource("1_b1ap2")
 3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:0/0/physics_layer_0/angular_velocity = 0.0
 4:0/0 = 0
+4:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_ydydi")
 4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:0/0/physics_layer_0/angular_velocity = 0.0
 4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -235,6 +239,7 @@ texture = ExtResource("1_b1ap2")
 7:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_ksfge"]
+occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ebjbl")
 

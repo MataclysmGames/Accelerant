@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/torch.gd" id="1_xqbfc"]
 
 [sub_resource type="Gradient" id="Gradient_donao"]
-colors = PackedColorArray(0.773554, 0, 0.189105, 1, 0, 0, 0, 0)
+colors = PackedColorArray(0.999987, 0.600326, 0.597916, 1, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_3t5gn"]
 gradient = SubResource("Gradient_donao")

@@ -64,11 +64,12 @@ func _init():
 			"Yep...",
 			"I see...",
 			"I don't know what any of this means.",
-			"But I trust you'll be able to handle it.",
+			"Sorry, I've just got so many wheels in motion right now!",
+			"Let's parking lot this for now and circle back later.",
+			"I trust you'll be able to handle it.",
 		]).with_next_id("brenda_chapter_2_finish_end"),
 		
 		DialogueBuilder.new("brenda_chapter_2_finish_end").with_header("Brenda").with_content_list([
-			"I just don't know how to help you.",
 			"Tom was the only person that understood how any of this works!",
 			"Please, just do [rainbow]something[/rainbow]!"
 		]).with_next_id("chapter_3_start"),

@@ -47,4 +47,6 @@ func handle_message(message : String, _sender : String):
 		tween.tween_callback(func(): clippy.speed = 85)
 		tween.tween_callback(func(): player.permanently_enable())
 	elif message == "chapter_2_finish":
-		pass
+		player.disable_input()
+		PlayerLoadPosition.set_player_load_position(Vector2(-8, 0))
+		SceneLightingGlobal.fade_in_scene("res://scenes/office/my_office.tscn")

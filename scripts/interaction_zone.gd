@@ -1,3 +1,4 @@
+class_name InteractionZone
 extends Area2D
 
 @export var interaction_name : StringName
@@ -36,15 +37,21 @@ func _process(_delta):
 				elif GameState.has_done_action("chapter_2_start") and not GameState.has_done_action("chapter_2_finish"):
 					SceneLightingGlobal.fade_in_scene("res://scenes/platform/title_screen.tscn")
 				elif GameState.has_done_action("chapter_3_start") and not GameState.has_done_action("chapter_3_finish"):
-					SceneLightingGlobal.fade_in_scene("res://scenes/platform/title_screen.tscn")
+					if not GameState.has_done_action("reset_button_pressed"):
+						player_node.show_dialogue_scene("investigate_hallway")
+					else:
+						SceneLightingGlobal.fade_in_scene("res://scenes/platform/title_screen.tscn")
 				elif GameState.has_done_action("chapter_4_start") and not GameState.has_done_action("chapter_4_finish"):
 					SceneLightingGlobal.fade_in_scene("res://scenes/platform/title_screen.tscn")
 				elif GameState.has_done_action("game_end"):
 					SceneLightingGlobal.fade_in_scene("res://scenes/platform/title_screen.tscn")
 				else:
 					player_node.show_dialogue_scene("no_need_for_computer")
-			"my_office_safe":
-				pass
+			"my_office_secret_door":
+				if GameState.has_item("Office Hidden Door Passcode"):
+					player_node.show_dialogue_scene("my_office_secret_door_with_passcode")
+				else:
+					player_node.show_dialogue_scene("my_office_secret_door_without_passcode")
 			"chapter_0_finish", "chapter_1_finish", "chapter_2_finish", "chapter_3_finish", "chapter_4_finish":
 				player_node.disable_input()
 				GlobalEventBus.message.emit(interaction_name, "InteractionZone")
@@ -60,6 +67,11 @@ func _process(_delta):
 				player_node.show_dialogue_node(DialogueOmar.singleton().get_active_dialogue())
 			"npc_daniel":
 				player_node.show_dialogue_node(DialogueDaniel.singleton().get_active_dialogue())
+			"push_reset_button":
+				if GameState.has_done_action("reset_button_pressed"):
+					player_node.show_dialogue_scene("reset_button_already_pressed")
+				else:
+					player_node.show_dialogue_scene("reset_button")
 			_:
 				var message = "Invalid interaction name [" + interaction_name + "]"
 				print_rich("[color=red]" + message + "[/color]")
