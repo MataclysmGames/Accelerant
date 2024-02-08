@@ -217,7 +217,7 @@ func _process(_delta):
 		handle_cell_selection()
 		handle_reset()
 		handle_zoom()
-		handle_mouse_click()
+		#handle_mouse_click()
 
 func _physics_process(delta):
 	if is_alive and can_handle_user_input:

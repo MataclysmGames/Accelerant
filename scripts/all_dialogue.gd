@@ -54,7 +54,7 @@ static var dialogue_builders : Array[DialogueBuilder] = [
 		"You can now access 'set_expenses'!"
 	]),
 	DialogueBuilder.new("chapter_1_finish_ack").with_header("[rainbow]New routine unlocked![/rainbow]").with_content_list([
-		"You can now access 'sus_reports'!"
+		"You can now access 'get_reports'!"
 	]),
 	DialogueBuilder.new("chapter_2_finish_ack").with_header("[rainbow]New routine unlocked![/rainbow]").with_content_list([
 		"You can now access 'something'!"
