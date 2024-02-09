@@ -30,7 +30,7 @@ func message_callback(message : String, sender : String):
 		save_to_disk()
 	else:
 		add_action(message)
-	
+
 func has_save_data() -> bool:
 	return save_resource and (save_resource.actions_done or save_resource.items or save_resource.start_time)
 
@@ -45,8 +45,9 @@ func has_done_action(action : String):
 	return save_resource.actions_done.has(action)
 	
 func add_action(action : String):
-	save_resource.actions_done.append(action)
-	save_to_disk()
+	if not has_done_action(action):
+		save_resource.actions_done[action] = true
+		save_to_disk()
 
 func has_global_volume_set() -> bool:
 	return save_resource.global_volume != -1.0

@@ -177,11 +177,11 @@ func handle_camera_target():
 	# Determine how much to lead the camera
 	var x_lead = avg_velocity_x / 2
 	camera_target.position.x = move_toward(camera_target.position.x, x_lead, 0.5)
-	
+
 	if is_on_floor():
 		var look_up_down_direction = Input.get_axis("up", "down")
 		camera_target.position.y = move_toward(camera_target.position.y, look_up_down_direction * 75, 3)
-	
+
 func avg(list : Array[float]) -> float:
 	var total = 0.0
 	for val in list:

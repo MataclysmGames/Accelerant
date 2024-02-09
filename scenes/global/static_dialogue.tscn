@@ -19,6 +19,7 @@ color_ramp = SubResource("Gradient_vft8y")
 noise = SubResource("FastNoiseLite_j0pe3")
 
 [node name="StaticDialogue" type="CanvasLayer"]
+visible = false
 script = ExtResource("1_un6ng")
 
 [node name="Control" type="Control" parent="."]
@@ -67,7 +68,6 @@ theme = ExtResource("2_mpphn")
 theme_override_font_sizes/normal_font_size = 6
 theme_override_font_sizes/mono_font_size = 6
 bbcode_enabled = true
-text = "[b]Hello World[/b]"
 fit_content = true
 
 [node name="ContentLabel" type="RichTextLabel" parent="Control"]
@@ -80,7 +80,6 @@ offset_bottom = 44.0
 theme = ExtResource("2_mpphn")
 theme_override_font_sizes/normal_font_size = 6
 bbcode_enabled = true
-text = "[pulse][rainbow]The quick brown fox jumps over the lazy dog. Test Test Test"
 fit_content = true
 scroll_active = false
 

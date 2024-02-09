@@ -33,6 +33,7 @@ func move_characters_to_standup():
 func standup_cutscene(cutscene_name : String):
 	match cutscene_name:
 		"standup":
+			office_player.permanently_disable()
 			var tween = create_tween()
 			tween.tween_property(office_player.camera, "zoom", Vector2(1.5, 1.5), 1)
 			tween.tween_callback(func(): office_player.show_dialogue_scene("standup"))
