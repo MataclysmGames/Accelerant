@@ -6,7 +6,6 @@ extends Sprite2D
 
 var tween : Tween
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	tween = create_tween()
 	tween.tween_property(self, "rotation_degrees", rotation_amount, rotation_duration)

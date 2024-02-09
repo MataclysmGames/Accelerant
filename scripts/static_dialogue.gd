@@ -6,14 +6,12 @@ extends CanvasLayer
 @onready var button_1 : Button = $Control/Button1
 @onready var button_2 : Button = $Control/Button2
 @onready var button_3 : Button = $Control/Button3
-@onready var interaction_icon : Sprite2D = $Control/InteractionIcon
 
 var active_dialogue : DialogueNode
 var last_interaction_time = Time.get_ticks_msec()
 var content_visible_tween : Tween
 var is_typing : bool = false
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	visible = false
 	button_1.visible = false
@@ -23,18 +21,11 @@ func _ready():
 	button_2.button_down.connect(handle_choice.bind(1))
 	button_3.button_down.connect(handle_choice.bind(2))
 	
-	var interaction_icon_tween = interaction_icon.create_tween()
-	interaction_icon_tween.tween_callback(func(): interaction_icon.frame = 0)
-	interaction_icon_tween.tween_interval(1)
-	interaction_icon_tween.tween_callback(func(): interaction_icon.frame = 1)
-	interaction_icon_tween.set_loops()
-	
 func handle_choice(choice: int):
 	last_interaction_time = Time.get_ticks_msec()
 	var dialogue = AllDialogue.get_dialogue(active_dialogue.choices[choice].next_id)
 	render_dialogue(dialogue)
 	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if not active_dialogue:
 		if visible:

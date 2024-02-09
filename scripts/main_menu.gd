@@ -17,7 +17,6 @@ var controls_hidden : bool = true
 var initial_delete_button_text : String
 var delete_save_timer : Timer
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	AllDialogue.load_dialogue_dict()
 	BackgroundAudio.play_audio(theme, -20, 1)

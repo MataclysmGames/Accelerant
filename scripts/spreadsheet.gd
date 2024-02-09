@@ -10,7 +10,6 @@ extends Node2D
 @onready var columnGen : LabelGenerator = $ColumnLabelGenerator
 @onready var rowGen : LabelGenerator = $RowLabelGenerator
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	start_function_label_flash()
 	columnGen.generate(num_columns - 1)
@@ -24,7 +23,6 @@ func start_function_label_flash():
 	tween.tween_interval(1)
 	tween.set_loops()
 	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if player and cellLabel:
 		var player_position = player.get_cell_position()

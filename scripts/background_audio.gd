@@ -4,14 +4,6 @@ extends Node2D
 
 var current_audio_resource = "none"
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
-
 func play_audio(audio : AudioStream, volume : float = 0.0, pitch : float = 1.0, transition_duration : float = 2.0):
 	if not audio:
 		return

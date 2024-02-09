@@ -12,7 +12,6 @@ extends Node2D
 
 var reenable_timer : Timer
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	secret_room_lights.energy = 0
 	BackgroundAudio.play_audio(theme, -20, 1)

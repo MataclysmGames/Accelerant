@@ -8,7 +8,6 @@ extends Node2D
 
 var last_pause_action : int = Time.get_ticks_msec()
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	canvas_layer.visible = false
 	resume_button.pressed.connect(unpause)
@@ -23,8 +22,6 @@ func toggle_pause():
 	if should_toggle_pause():
 		if get_node_or_null("/root/MainMenu") or get_node_or_null("/root/OfficeComputer")  or get_node_or_null("/root/Credits"):
 			return
-		#if not OfficePlayer.can_handle_user_input:
-		#	return
 		var tree = get_tree()
 		last_pause_action = Time.get_ticks_msec()
 		tree.paused = not tree.paused

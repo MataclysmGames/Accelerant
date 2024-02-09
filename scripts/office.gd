@@ -10,7 +10,6 @@ extends Node2D
 
 @onready var cutscene_trigger = $CutsceneTrigger
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	BackgroundAudio.play_audio(theme, -20, 1)
 	cutscene_trigger.trigger.connect(standup_cutscene)

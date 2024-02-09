@@ -12,10 +12,6 @@ var has_triggered_cutscene : bool = false
 func _ready():
 	has_triggered_cutscene = GameState.has_done_action(cutscene_name)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
-
 func _on_body_entered(body):
 	if body is OfficePlayer or body is PlatformPlayer:
 		if one_shot and has_triggered_cutscene:
@@ -23,6 +19,3 @@ func _on_body_entered(body):
 		trigger.emit(cutscene_name)
 		has_triggered_cutscene = true
 		GameState.add_action(cutscene_name)
-
-func _on_body_exited(_body):
-	pass # Replace with function body.

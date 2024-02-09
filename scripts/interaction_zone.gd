@@ -19,7 +19,6 @@ func _on_body_exited(body : Node2D):
 		player_node = null
 		body.interact_with(self, false)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	var is_interact_pressed = Input.is_action_just_pressed("interact")
 	if player_in_area and is_interact_pressed and player_node.can_interact():

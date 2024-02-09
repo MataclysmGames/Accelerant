@@ -8,7 +8,6 @@ extends Node2D
 var boot_tween : Tween
 var content : String
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	BackgroundAudio.stop_audio()
 	# Please for the love of God just remove the scrollbars
@@ -48,7 +47,6 @@ func _ready():
 	
 	boot_tween.tween_callback(func(): SceneLightingGlobal.fade_in_scene("res://scenes/platform/title_screen.tscn"))
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	content_text.text = content
 	content_text.scroll_vertical = 1000

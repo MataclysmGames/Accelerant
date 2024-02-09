@@ -9,16 +9,11 @@ extends AnimatableBody2D
 var initial_position : Vector2
 var movement_tween : Tween
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	initial_position = position
 	if relative_destination:
 		create_movement_tween(enabled)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
-	
 func enable():
 	enabled = true
 	movement_tween.play()

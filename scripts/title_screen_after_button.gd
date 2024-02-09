@@ -14,7 +14,6 @@ var chapter_4_done : bool
 
 var alphabet : String = "abcdefghijklmnopqrstuvwxyz_ !ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	BackgroundAudio.stop_audio()
 	chapter_0_done = GameState.has_done_action("chapter_0_finish")

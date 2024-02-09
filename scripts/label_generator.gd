@@ -5,13 +5,8 @@ extends Label
 @export var y_offset : int = 0
 @export var label_size : float = 16.0
 	
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	size = Vector2(label_size, label_size)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
 
 func generate(max_propagation : int):
 	size = Vector2(label_size, label_size)

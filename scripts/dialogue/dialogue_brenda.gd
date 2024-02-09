@@ -76,7 +76,9 @@ func _init():
 		]).with_next_id("chapter_3_start"),
 		
 		DialogueBuilder.new("brenda_fire_employee").with_header("Brenda").with_content_list([
-			"Oh, you got the database working again? Perfect!",
+			"Oh, you got the database working again?",
+			"Perfect! Just in time.",
+			"Oh",
 			"HR says we need to let someone go because of 'budget adjustments'.",
 			"I've narrowed it down to Daniel or Omar.",
 			"Omar has been here for 35 years. But Daniel consistently brings in more clients.",

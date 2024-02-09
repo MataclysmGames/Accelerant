@@ -8,7 +8,6 @@ var player_in_area : bool = false
 var player_node : PlatformPlayer = null
 var has_triggered : bool = false
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if one_shot and has_triggered:
 		return

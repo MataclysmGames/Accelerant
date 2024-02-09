@@ -8,7 +8,6 @@ extends Node2D
 var contentArray : PackedStringArray
 var contentArrayIndex : int = -1
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	control.visible = false
 	

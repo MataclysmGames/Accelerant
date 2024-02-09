@@ -23,7 +23,6 @@ extends CanvasLayer
 var entered_values : String = ""
 var office_player : OfficePlayer
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	visible = false
 	button_1.button_down.connect(handle_choice.bind("1"))

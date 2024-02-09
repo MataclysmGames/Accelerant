@@ -13,7 +13,6 @@ var current_movement_index : int = 0
 var movement_sign : int = 1
 var is_moving = false
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	initial_position = position
 	color_rect.color = color
