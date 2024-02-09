@@ -34,7 +34,7 @@ num_columns = 14
 num_rows = 32
 
 [node name="Player" parent="." instance=ExtResource("5_8gbiv")]
-position = Vector2(256, 96)
+position = Vector2(64, 480)
 collision_mask = 23
 camera_limit_top = -16
 camera_limit_right = 736

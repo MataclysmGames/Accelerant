@@ -108,12 +108,14 @@ text = " fx=|"
 vertical_alignment = 1
 
 [node name="ColumnLabelGenerator" parent="." instance=ExtResource("4_5tbw5")]
+z_index = 2
 offset_left = 64.0
 offset_top = 32.0
 offset_right = 80.0
 offset_bottom = 48.0
 
 [node name="RowLabelGenerator" parent="." instance=ExtResource("4_5tbw5")]
+z_index = 2
 offset_left = 16.0
 offset_top = 48.0
 offset_right = 32.0

@@ -2,7 +2,7 @@ extends Node2D
 
 @export var theme : AudioStream
 
-@onready var office_player = $OfficePlayer
+@onready var office_player : OfficePlayer = $OfficePlayer
 
 @onready var npc_daniel = $NPC_Daniel
 @onready var npc_omar = $NPC_Omar
@@ -34,7 +34,9 @@ func move_characters_to_standup():
 func standup_cutscene(cutscene_name : String):
 	match cutscene_name:
 		"standup":
-			office_player.show_dialogue_scene("standup")
+			var tween = create_tween()
+			tween.tween_property(office_player.camera, "zoom", Vector2(1.5, 1.5), 1)
+			tween.tween_callback(func(): office_player.show_dialogue_scene("standup"))
 		_:
 			push_error("Invalid cutscene match %s" % cutscene_name)
 

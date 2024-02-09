@@ -260,4 +260,10 @@ static var dialogue_builders : Array[DialogueBuilder] = [
 		"I don't need to use this right now."
 	]),
 	#endregion
+	
+	#need_to_press_reset_button
+	DialogueBuilder.new("need_to_press_reset_button").with_header("").with_content_list([
+		"I should find the kill switch before going back in.",
+		"Tom said there was a door in this room somewhere."
+	])
 ]

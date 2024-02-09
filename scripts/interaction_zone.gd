@@ -37,6 +37,8 @@ func _process(_delta):
 						SceneLightingGlobal.fade_in_scene("res://scenes/platform/title_screen.tscn")
 					elif GameState.has_done_action("chapter_2_start") and not GameState.has_done_action("chapter_2_finish"):
 						SceneLightingGlobal.fade_in_scene("res://scenes/platform/title_screen.tscn")
+					elif GameState.has_done_action("chapter_3_start"):
+						player_node.show_dialogue_scene("need_to_press_reset_button")
 					else:
 						player_node.show_dialogue_scene("no_need_for_computer")
 				else:
@@ -66,6 +68,8 @@ func _process(_delta):
 				player_node.show_dialogue_node(DialogueOmar.singleton().get_active_dialogue())
 			"npc_daniel":
 				player_node.show_dialogue_node(DialogueDaniel.singleton().get_active_dialogue())
+			"defragment":
+				GlobalEventBus.message.emit("defragment", "InteractionZone")
 			"push_reset_button":
 				if GameState.has_done_action("reset_button_pressed"):
 					player_node.show_dialogue_scene("reset_button_already_pressed")
