@@ -45,10 +45,9 @@ func _init():
 				"Use that to open the door in your office.",
 				"It leads to the kill switch.",
 				"It will reset the beast to his default state.",
-				"Unfortunately this will also strip the database down to its foundation.",
-				"No more fun moving platforms or spikes.",
-				"Just boring, easily accessible data.",
+				"Unfortunately, this will also defragment the database.",
 				"But that's the sacrifice we must make to ensure he doesn't escape.",
+				"Since you've come this far, I'm sure you'll be able to fix it afterwards.",
 				"Please. End this once and for all."
 			])
 			.with_next_id("chapter_2_finish"),

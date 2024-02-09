@@ -57,7 +57,7 @@ static var dialogue_builders : Array[DialogueBuilder] = [
 		"You can now access 'get_reports'!"
 	]),
 	DialogueBuilder.new("chapter_2_finish_ack").with_header("[rainbow]New routine unlocked![/rainbow]").with_content_list([
-		"You can now access 'fix_it'!"
+		"You can now access 'defragment'!"
 	]),
 	DialogueBuilder.new("chapter_3_finish_ack").with_header("[rainbow]New routine unlocked![/rainbow]").with_content_list([
 		"You can now access 'fire_employee'!"

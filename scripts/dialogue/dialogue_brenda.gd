@@ -71,15 +71,16 @@ func _init():
 		
 		DialogueBuilder.new("brenda_chapter_2_finish_end").with_header("Brenda").with_content_list([
 			"Tom was the only person that understood how any of this works.",
+			"But it sounds like the database needs to be defragmented.",
 			"Please, just [rainbow]fix it[/rainbow]!"
 		]).with_next_id("chapter_3_start"),
 		
 		DialogueBuilder.new("brenda_fire_employee").with_header("Brenda").with_content_list([
-			"Oh I don't know what to do.",
-			"HR says we need to let someone go. 'Budget adjustments' they claim. Pfft.",
+			"Oh, you got the database working again? Perfect!",
+			"HR says we need to let someone go because of 'budget adjustments'.",
 			"I've narrowed it down to Daniel or Omar.",
 			"Omar has been here for 35 years. But Daniel consistently brings in more clients.",
-			"Oh I just don't know.",
+			"Hmm... such a tough choice.",
 		]).with_choices("Who do you think I should fire?", [Choice.new("1", "Daniel", "brenda_fire_employee_daniel"), Choice.new("2", "Omar", "brenda_fire_employee_omar")]),
 		
 		DialogueBuilder.new("brenda_fire_employee_daniel").with_header("Brenda").with_content_list([
