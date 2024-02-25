@@ -78,7 +78,7 @@ func _init():
 		DialogueBuilder.new("brenda_fire_employee").with_header("Brenda").with_content_list([
 			"Oh, you got the database working again?",
 			"Perfect! Just in time.",
-			"Oh",
+			"Unfortunately I have some bad news.",
 			"HR says we need to let someone go because of 'budget adjustments'.",
 			"I've narrowed it down to Daniel or Omar.",
 			"Omar has been here for 35 years. But Daniel consistently brings in more clients.",
@@ -99,15 +99,15 @@ func _init():
 			"Okay then it's settled.",
 			"Yes. This is the right choice.",
 			"Please update the database to fire him.",
-			"Ugh this is so frustrating!"
+			"Ugh this is so frustrating!",
 		]).with_final_id("chapter_4_start"),
 		
 		DialogueBuilder.new("brenda_fire_employee_complete").with_header("Brenda").with_content_list([
 			"Thank you for getting that done.",
-			"It's nasty business but that's life. The show must go on.",
+			"It's nasty business but the show must go on.",
 			"Hey why don't you take the rest of the day off?",
 			"It's been one heck of a first day for you haha.",
-			"Get some rest and I'll see you bright and early tomorrow morning at 8:00.",
+			"Get some rest and I'll see you bright and early tomorrow morning.",
 			"Oh. And, once again, welcome to the team."
 		]).with_next_id("game_end"),
 	]

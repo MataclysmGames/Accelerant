@@ -29,7 +29,9 @@ func _process(_delta):
 		match interaction_name:
 			"my_office_computer":
 				player_node.disable_input()
-				if not GameState.has_done_action("chapter_0_finish"):
+				if not GameState.has_done_action("daniel_active_users"):
+					player_node.show_dialogue_scene("no_need_for_computer")
+				elif not GameState.has_done_action("chapter_0_finish"):
 					SceneLightingGlobal.fade_in_scene("res://scenes/office/office_computer.tscn")
 				elif not GameState.has_done_action("reset_button_pressed"):
 					if GameState.has_done_action("chapter_1_start") and not GameState.has_done_action("chapter_1_finish"):

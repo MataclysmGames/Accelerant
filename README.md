@@ -1,6 +1,10 @@
 ## Play Online
 https://mataclysm.itch.io/accelerant
 
+### Feature Requests
+Initial development is complete.
+Comment on the itch page above to report any game-breaking bugs.
+
 ## Requirements
 - Install [Godot Engine 4.2.1](https://godotengine.org/download/windows/)
 - Install [Butler](https://itch.io/docs/butler/installing.html)

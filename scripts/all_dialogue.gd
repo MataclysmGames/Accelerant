@@ -223,9 +223,9 @@ static var dialogue_builders : Array[DialogueBuilder] = [
 		])
 		.with_header("Brenda").with_content_list([
 			"Geez Omar, you're going to scare him away haha.",
-			"Don't worry about it. Even the great Tom took several years to build out the database.",
-			"No one is expecting greatness from you on your first day. Just head over to your office after stand-up and start reading the onboarding documentation.",
-			"Alright, can we start stand-up already? Daniel, can you go first?"
+			"No one is expecting greatness from you on your first day.",
+			"Just head over to your office after stand-up and start reading the onboarding documentation.",
+			"Alright, let's start stand-up. Daniel, can you go first?"
 		])
 		.with_header("Daniel").with_content_list([
 			"Sure. I'm blocked by Jenny in sales who said we can't..."
@@ -233,7 +233,6 @@ static var dialogue_builders : Array[DialogueBuilder] = [
 	
 	DialogueBuilder.new("standup_done_ack").with_header("").with_content_list([
 		"*30 minutes later*",
-		"*sigh* New company, same excruciatingly long stand-up.",
 		"Guess I better go check out my office. They said it was through the door on the other side of this room."
 	]),
 	#endregion

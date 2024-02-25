@@ -47,7 +47,7 @@ func _init():
 		
 		DialogueBuilder.new("daniel_active_users_complete_end").with_header("Daniel").with_content_list([
 			"Anyway, thanks a lot for your help.",
-			"You just may have what it takes."
+			"You may just have what it takes."
 		]),
 		
 		DialogueBuilder.new("daniel_suspicious_reports").with_header("Daniel").with_content_list([
